@@ -15,28 +15,21 @@ if (localPropertiesFile.exists()) {
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode', '1')
 def flutterVersionName = localProperties.getProperty('flutter.versionName', '1.0')
 
-// Load signing configuration from key.properties
+// Load signing configuration from key.properties or environment variables (for Codemagic)
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('android/app/key.properties')
+def keystorePropertiesFile = rootProject.file('android/key.properties') // Updated path
 if (keystorePropertiesFile.exists()) {
     keystorePropertiesFile.withReader('UTF-8') { reader ->
         keystoreProperties.load(reader)
     }
 } else {
-    println "⚠️ WARNING: Keystore file 'android/app/key.properties' not found! Building without signing."
+    println "⚠️ WARNING: Keystore file 'android/key.properties' not found! Will attempt to use Codemagic environment variables for signing."
 }
 
 android {
     namespace "com.buyouyameal.chiw_express"
     compileSdk 34
-
-    defaultConfig {
-        applicationId "com.buyouyameal.chiw_express"
-        minSdk 21
-        targetSdk 34
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
-    }
+    ndkVersion "25.1.8937393" // Added for consistency with previous setup
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -47,12 +40,35 @@ android {
         jvmTarget = '17'
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin' // Added for Kotlin source compatibility
+    }
+
+    defaultConfig {
+        applicationId "com.buyouyameal.chiw_express"
+        minSdk 21
+        targetSdk 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
     signingConfigs {
         release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'] ?: "$rootDir/app/keystore.jks")
-            storePassword keystoreProperties['storePassword']
+            if (System.getenv("CM_KEYSTORE_PATH")) {
+                // Use Codemagic environment variables for signing
+                storeFile file(System.getenv("CM_KEYSTORE_PATH"))
+                storePassword System.getenv("CM_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("CM_KEY_ALIAS")
+                keyPassword System.getenv("CM_KEY_PASSWORD")
+            } else if (keystorePropertiesFile.exists()) {
+                // Use local key.properties for signing
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile file(keystoreProperties['storeFile'] ?: "keystore.jks") // Updated to point to android/app/keystore.jks
+                storePassword keystoreProperties['storePassword']
+            } else {
+                throw new GradleException("Keystore file not found. Please ensure android/key.properties exists or Codemagic environment variables are set.")
+            }
         }
     }
 
@@ -62,6 +78,22 @@ android {
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+// Normalize file paths for Windows (to fix app.so URI issue on local builds)
+gradle.taskGraph.whenReady { taskGraph ->
+    taskGraph.allTasks.each { task ->
+        if (task.name.contains("compileFlutterBuild")) {
+            task.inputs.files.each { file ->
+                def normalizedPath = file.absolutePath.replace('\\', '/')
+                task.inputs.file(normalizedPath)
+            }
+            task.outputs.files.each { file ->
+                def normalizedPath = file.absolutePath.replace('\\', '/')
+                task.outputs.file(normalizedPath)
+            }
         }
     }
 }
