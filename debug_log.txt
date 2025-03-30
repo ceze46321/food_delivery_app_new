@@ -1,0 +1,50 @@
+Downloading Web SDK...                                             20.8s
+Downloading windows-x64-debug/windows-x64-flutter tools...         26.8s
+Downloading windows-x64/flutter-cpp-client-wrapper tools...        303ms
+Downloading windows-x64-profile/windows-x64-flutter tools...        36.9s
+Downloading windows-x64-release/windows-x64-flutter tools...        53.8s
+Launching lib\main.dart on Infinix X6532 in debug mode...
+Running Gradle task 'assembleDebug'...                          
+Looking for key.properties at: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\key.properties
+key.properties found!
+Looking for keystore.jks at: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\app\keystore.jks
+Signing Config - keyAlias: release
+Signing Config - keyPassword: versatile153
+Signing Config - storeFile: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\app\keystore.jks
+Signing Config - storePassword: versatile153
+Running Gradle task 'assembleDebug'...                            180.1s
+√  Built build\app\outputs\flutter-apk\app-debug.apk.
+Installing build\app\outputs\flutter-apk\app-debug.apk...          10.6s
+Error: ADB exited with exit code 1
+Performing Streamed Install
+
+adb: failed to install C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\build\app\outputs\flutter-apk\app-debug.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.buyouyameal.chiw_express signatures do not match newer version; ignoring!]
+Uninstalling old version...
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.8s
+E/AndroidRuntime(24805): FATAL EXCEPTION: main
+E/AndroidRuntime(24805): Process: com.buyouyameal.chiw_express, PID: 24805
+E/AndroidRuntime(24805): java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity}: java.lang.ClassNotFoundException: Didn't find class "com.buyouyameal.chiw_express.MainActivity" on path: DexPathList[[zip file "/data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/base.apk"],nativeLibraryDirectories=[/data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/lib/arm, /data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/base.apk!/lib/armeabi-v7a, /system/lib, /system_ext/lib]]
+E/AndroidRuntime(24805): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3812)
+E/AndroidRuntime(24805): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4087)
+E/AndroidRuntime(24805): 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:114)
+E/AndroidRuntime(24805): 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:139)
+E/AndroidRuntime(24805): 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:96)
+E/AndroidRuntime(24805): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2560)
+E/AndroidRuntime(24805): 	at android.os.Handler.dispatchMessage(Handler.java:106)
+E/AndroidRuntime(24805): 	at android.os.Looper.loopOnce(Looper.java:243)
+E/AndroidRuntime(24805): 	at android.os.Looper.loop(Looper.java:338)
+E/AndroidRuntime(24805): 	at android.app.ActivityThread.main(ActivityThread.java:8524)
+E/AndroidRuntime(24805): 	at java.lang.reflect.Method.invoke(Native Method)
+E/AndroidRuntime(24805): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:602)
+E/AndroidRuntime(24805): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1064)
+E/AndroidRuntime(24805): Caused by: java.lang.ClassNotFoundException: Didn't find class "com.buyouyameal.chiw_express.MainActivity" on path: DexPathList[[zip file "/data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/base.apk"],nativeLibraryDirectories=[/data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/lib/arm, /data/app/~~y_rLmEX263ig06iNbMxbJA==/com.buyouyameal.chiw_express-Khjf67VbKRJ8sPhUVPCN6g==/base.apk!/lib/armeabi-v7a, /system/lib, /system_ext/lib]]
+E/AndroidRuntime(24805): 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+E/AndroidRuntime(24805): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+E/AndroidRuntime(24805): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+E/AndroidRuntime(24805): 	at android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:95)
+E/AndroidRuntime(24805): 	at androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)
+E/AndroidRuntime(24805): 	at android.app.Instrumentation.newActivity(Instrumentation.java:1387)
+E/AndroidRuntime(24805): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3799)
+E/AndroidRuntime(24805): 	... 12 more
+Terminate batch job (Y/N)? 
+^C

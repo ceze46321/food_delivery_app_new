@@ -2,7 +2,6 @@
 
     <application
         android:label="buyouyameal"
-        android:name=".MainApplication"
         android:icon="@mipmap/ic_launcher">
 
         <activity

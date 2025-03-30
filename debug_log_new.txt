@@ -1,0 +1,953 @@
+Launching lib\main.dart on Infinix X6532 in debug mode...
+Running Gradle task 'assembleDebug'...                          
+Looking for key.properties at: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\key.properties
+key.properties found!
+Looking for keystore.jks at: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\app\keystore.jks
+Signing Config - keyAlias: release
+Signing Config - keyPassword: versatile153
+Signing Config - storeFile: C:\Users\ifben\development\food_app_clean\canibuyyouameal\food_delivery_app_new\android\app\keystore.jks
+Signing Config - storePassword: versatile153
+Running Gradle task 'assembleDebug'...                             69.0s
+√  Built build\app\outputs\flutter-apk\app-debug.apk.
+Installing build\app\outputs\flutter-apk\app-debug.apk...           4.4s
+I/flutter (29497): Error loading .env: Instance of 'FileNotFoundError'
+Syncing files to device Infinix X6532...                        
+I/flutter (29497): Building MyApp
+Syncing files to device Infinix X6532...                           770ms
+
+Flutter run key commands.
+r Hot reload. 
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Infinix X6532 is available at: http://127.0.0.1:50952/H3-PwE9DUCU=/
+I/flutter (29497): Navigating to SplashScreen
+The Flutter DevTools debugger and profiler on Infinix X6532 is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:50952/H3-PwE9DUCU=/
+I/mali    (29497): [DebugProp] GPU Debug-Mechanism Disable !
+D/MAGT_SYNC_FRAME(29497): MAGT Sync: MAGT is not supported. Disabling Sync.
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) acquireNextBufferLocked size=720x1520 mFrameNumber=1 applyTransaction=true mTimestamp=13305676320407(auto) mPendingTransactions.size=0 graphicBufferId=126688650330112 transform=0
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#0](f:0,a:1) acquireNextBufferLocked size=720x1600 mFrameNumber=1 applyTransaction=true mTimestamp=13305748659715(auto) mPendingTransactions.size=0 graphicBufferId=126688650330114 transform=0
+I/flutter (29497): Navigating to LoginScreen
+I/flutter (29497): Creating AuthProvider
+I/flutter (29497): Loading token...
+I/flutter (29497): Loading token...
+I/flutter (29497): Loading token...
+W/WindowOnBackDispatcher(29497): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29497): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29497): SharedPrefs loaded - Token: null, Role: null, IsAdmin: false
+I/flutter (29497): SharedPrefs loaded - Token: null, Role: null, IsAdmin: false
+I/flutter (29497): SharedPrefs loaded - Token: null, Role: null, IsAdmin: false
+D/os.LiceInfo(29497): instance successfully. com.transsion.message.bank.v1.MessageBankLice@cd0f0 from com.transsion.message.bank.IMessageBankLice
+D/TranClassInfo(29497): instance successfully. com.transsion.hubcore.internal.policy.TranDecorViewImpl@6ae28ee from com.transsion.hubcore.internal.policy.ITranDecorView
+D/TranClassInfo(29497): instance successfully. com.transsion.hubcore.view.TranSurfaceControlImpl@eb4218f from com.transsion.hubcore.view.ITranSurfaceControl
+I/al.chiw_express(29497): NativeAlloc concurrent mark compact GC freed 988KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3000KB/6000KB, paused 949us,5.396ms total 74.220ms
+D/TranClassInfo(29497): instance successfully. com.transsion.hubcore.internal.jank.TranFrameTrackerImpl@8860c1c from com.transsion.hubcore.internal.jank.ITranFrameTracker
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+D/TranClassInfo(29497): instance successfully. com.transsion.hubcore.widget.TranScrollPolicyImpl@85b47ab from com.transsion.hubcore.widget.ITranScrollPolicy
+D/TranClassInfo(29497): instance successfully. com.transsion.hubcore.spdopts.magellan.implement.TranScrollPolicyMagellanImpl@7f5ce08 from com.transsion.hubcore.magellan.ITranMagellanScrollPolicyComponent
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ImeTracker(29497): com.buyouyameal.chiw_express:986a2a61: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): invalidateInput sessionid: 0
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F....ID 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor(29497): The input method toggled cursor monitoring on
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:986a2a61: onShown
+I/ImeTracker(29497): com.buyouyameal.chiw_express:397d1d64: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:397d1d64: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:5c077634: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:5c077634: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:575271b4: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:575271b4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:2a5e2c9f: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:2a5e2c9f: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:2cb1ec81: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:2cb1ec81: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:33681adc: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:33681adc: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ScrollIdentify(29497): on fling
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) Faking releaseBufferCallback from transactionCompleteCallback 386
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330119 framenumber:386
+I/ScrollIdentify(29497): on fling
+D/InputMethodManager(29497): invalidateInput sessionid: 0
+I/ImeTracker(29497): com.buyouyameal.chiw_express:67d032ca: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor(29497): The input method toggled cursor monitoring on
+D/InputConnectionAdaptor(29497): The input method toggled cursor monitoring off
+D/InputConnectionAdaptor(29497): The input method toggled cursor monitoring on
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:67d032ca: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:80e56288: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:80e56288: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:51d3be84: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:51d3be84: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:b9c5173: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:b9c5173: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:9b45cc35: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:9b45cc35: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:b693fff2: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:b693fff2: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:ead5906b: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:ead5906b: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:8a41e3d6: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:8a41e3d6: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:83afdb28: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:83afdb28: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker(29497): com.buyouyameal.chiw_express:675541ea: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(29497): showSoftInput() view=io.flutter.embedding.android.FlutterView{1f2b44c VFE...... .F...... 0,0-720,1520 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(29497): show(ime(), fromIme=true)
+I/ImeTracker(29497): com.buyouyameal.chiw_express:675541ea: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) Faking releaseBufferCallback from transactionCompleteCallback 480
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330113 framenumber:480
+I/flutter (29497): Response for POST /login: 200 - {"message":"Login successful","user":{"id":2,"name":"versatile153","email":"ceze46321@gmail.com","role":"restaurant_owner"},"token":"155|l4xaLIWzAQyTf1v29sAPqIzrrER5xg53CvQtrEKi63c778f5"}
+I/flutter (29497): Token set: 155|l4xaLIWzAQyTf1v29sAPqIzrrER5xg53CvQtrEKi63c778f5
+I/flutter (29497): Parsing admin value: "null" (type: Null)
+I/flutter (29497): Admin value is null, returning false
+I/flutter (29497): Login admin status: null (parsed to false)
+I/flutter (29497): Response for GET /profile: 200 - {"name":"versatile153","email":"ceze46321@gmail.com","role":"restaurant_owner","delivery_location":null,"phone":null,"vehicle":null}
+I/flutter (29497): Parsing admin value: "null" (type: Null)
+I/flutter (29497): Admin value is null, returning false
+I/flutter (29497): Profile admin status: null (parsed to false)
+I/flutter (29497): Profile fetched successfully
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): Grocery products fetched successfully
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) Faking releaseBufferCallback from transactionCompleteCallback 666
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330119 framenumber:666
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) Faking releaseBufferCallback from transactionCompleteCallback 669
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330113 framenumber:669
+I/flutter (29497): Response for GET /user/groceries: 200 - []
+I/flutter (29497): User groceries fetched successfully
+I/flutter (29497): Response for GET /customer-reviews: 200 - []
+I/flutter (29497): Customer reviews fetched successfully
+I/flutter (29497): Login Response: {message: Login successful, user: {id: 2, name: versatile153, email: ceze46321@gmail.com, role: restaurant_owner}, token: 155|l4xaLIWzAQyTf1v29sAPqIzrrER5xg53CvQtrEKi63c778f5}
+I/flutter (29497): Token set: 155|l4xaLIWzAQyTf1v29sAPqIzrrER5xg53CvQtrEKi63c778f5
+I/flutter (29497): Token set in ApiService: 155|l4xaLIWzAQyTf1v29sAPqIzrrER5xg53CvQtrEKi63c778f5
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) Faking releaseBufferCallback from transactionCompleteCallback 790
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330116 framenumber:790
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) Faking releaseBufferCallback from transactionCompleteCallback 793
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330118 framenumber:793
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) Faking releaseBufferCallback from transactionCompleteCallback 792
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330119 framenumber:792
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) Faking releaseBufferCallback from transactionCompleteCallback 806
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330119 framenumber:806
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) Faking releaseBufferCallback from transactionCompleteCallback 809
+E/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:1) ERROR: releaseBufferCallback without corresponding submitted buffer bufferId:126688650330113 framenumber:809
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+W/WindowOnBackDispatcher(29497): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29497): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker(29497): com.buyouyameal.chiw_express:f94a8fe2: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/InputConnectionAdaptor(29497): The input method toggled cursor monitoring off
+W/WindowOnBackDispatcher(29497): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@230786596 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@9bd4126
+I/ImeTracker(29497): com.buyouyameal.chiw_express:93ada8d1: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker(29497): com.buyouyameal.chiw_express:f94a8fe2: onHidden
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 42 pixels on the right.
+
+The relevant error-causing widget was:
+  Row
+  Row:file:///C:/Users/ifben/development/food_app_clean/canibuyyouameal/food_delivery_app_new/lib/screens/home_screen.dart:415:29
+
+To inspect this widget in Flutter DevTools, visit:
+http://127.0.0.1:9100/#/inspector?uri=http%3A%2F%2F127.0.0.1%3A50952%2FH3-PwE9DUCU%3D%2F&inspectorRef=inspector-0
+
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#8d971 relayoutBoundary=up5 OVERFLOWING:
+  creator: Row ← Column ← Padding ← ColoredBox ← Container ← SliverToBoxAdapter ← Viewport ←
+    IgnorePointer-[GlobalKey#3bb38] ← Semantics ← Listener ← _GestureSemantics ←
+    RawGestureDetector-[LabeledGlobalKey<RawGestureDetectorState>#abad0] ← ⋯
+  parentData: offset=Offset(0.0, 45.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(0.0<=w<=320.0, 0.0<=h<=Infinity)
+  size: Size(320.0, 48.0)
+  direction: horizontal
+  mainAxisAlignment: spaceEvenly
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+W/WindowOnBackDispatcher(29497): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29497): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+W/WindowOnBackDispatcher(29497): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(29497): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+Another exception was thrown: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Navigating to OrderScreen with orderId: null, status: null
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /orders: 200 - [{"id":33,"total":"7200.00","status":"pending","tracking_number":"TRK67DFFF7F19562","payment_method":"flutterwave","created_at":"2025-03-23T12:33:03.000000Z"},{"id":32,"total":"2500.00","status":"completed","tracking_number":"TRK67DF61D292284","payment_method":"flutterwave","created_at":"2025-03-23T01:20:18.000000Z"},{"id":31,"total":"5000.00","status":"pending","tracking_number":"TRK67DF605D63EA9","payment_method":"flutterwave","created_at":"2025-03-23T01:14:05.000000Z"}]
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /orders/track/TRK67DFFF7F19562: 404 - {
+I/flutter (29497):     "message": "The route api/orders/track/TRK67DFFF7F19562 could not be found.",
+I/flutter (29497):     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+I/flutter (29497):     "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+I/flutter (29497):     "line": 44,
+I/flutter (29497):     "trace": [
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+I/flutter (29497):             "line": 162,
+I/flutter (29497):             "function": "handleMatchedRoute",
+I/flutter (29497):             "class": "Illuminate\\Routing\\AbstractRouteCollection",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+I/flutter (29497):             "line": 761,
+I/flutter (29497):             "function": "match",
+I/flutter (29497):             "class": "Illuminate\\Routing\\RouteCollection",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.ape
+I/flutter (29497): Get order tracking failed: Exception: GET /orders/track/TRK67DFFF7F19562 failed: 404 - {
+I/flutter (29497):     "message": "The route api/orders/track/TRK67DFFF7F19562 could not be found.",
+I/flutter (29497):     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+I/flutter (29497):     "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+I/flutter (29497):     "line": 44,
+I/flutter (29497):     "trace": [
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+I/flutter (29497):             "line": 162,
+I/flutter (29497):             "function": "handleMatchedRoute",
+I/flutter (29497):             "class": "Illuminate\\Routing\\AbstractRouteCollection",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+I/flutter (29497):             "line": 761,
+I/flutter (29497):             "function": "match",
+I/flutter (29497):             "class": "Illuminate\\Routing\\RouteCollection",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+I/flutter (29497):             "line": 748,
+I/flutter (29497):             "function": "findRoute",
+I/flutter (29497):             "class": "Illuminate\\Routing\\Router",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+I/flutter (29497):             "line": 737,
+I/flutter (29497):             "function": "dispatchToRoute",
+I/flutter (29497):             "class": "Illuminate\\Routing\\Router",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+I/flutter (29497):             "line": 200,
+I/flutter (29497):             "function": "dispatch",
+I/flutter (29497):             "class": "Illuminate\\Routing\\Router",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 144,
+I/flutter (29497):             "function": "Illuminate\\Foundation\\Http\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Kernel",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+I/flutter (29497):             "line": 21,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+I/flutter (29497):             "line": 31,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+I/flutter (29497):             "line": 21,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+I/flutter (29497):             "line": 40,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+I/flutter (29497):             "line": 27,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+I/flutter (29497):             "line": 99,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+I/flutter (29497):             "line": 62,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Http\\Middleware\\HandleCors",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+I/flutter (29497):             "line": 39,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 183,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+I/flutter (29497):             "line": 119,
+I/flutter (29497):             "function": "Illuminate\\Pipeline\\{closure}",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+I/flutter (29497):             "line": 175,
+I/flutter (29497):             "function": "then",
+I/flutter (29497):             "class": "Illuminate\\Pipeline\\Pipeline",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+I/flutter (29497):             "line": 144,
+I/flutter (29497):             "function": "sendRequestThroughRouter",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Kernel",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         },
+I/flutter (29497):         {
+I/flutter (29497):             "file": "/home/apexgnoa/plus.apexjets.org/public/index.php",
+I/flutter (29497):             "line": 52,
+I/flutter (29497):             "function": "handle",
+I/flutter (29497):             "class": "Illuminate\\Foundation\\Http\\Kernel",
+I/flutter (29497):             "type": "->"
+I/flutter (29497):         }
+I/flutter (29497):     ]
+I/flutter (29497): }
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+Another exception was thrown: Floating SnackBar presented off screen.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+Another exception was thrown: Floating SnackBar presented off screen.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+Another exception was thrown: Floating SnackBar presented off screen.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): Checking access - Role: restaurant_owner, Is Owner: true
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: A RenderFlex overflowed by 70 pixels on the right.
+I/flutter (29497): Response for GET /restaurant-owner/data: 404 - {"error":"No restaurants found for this owner"}
+I/flutter (29497): Get restaurant owner data failed: Exception: GET /restaurant-owner/data failed: 404 - {"error":"No restaurants found for this owner"}
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/ScrollIdentify(29497): on fling
+I/al.chiw_express(29497): Background concurrent mark compact GC freed 2409KB AllocSpace bytes, 10(520KB) LOS objects, 49% free, 3041KB/6082KB, paused 401us,5.229ms total 61.427ms
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+Another exception was thrown: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Navigating to CustomerReviewScreen
+Another exception was thrown: setState() or markNeedsBuild() called during build.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /customer-reviews: 200 - []
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Navigating to OrderScreen with orderId: null, status: null
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /orders: 200 - [{"id":33,"total":"7200.00","status":"pending","tracking_number":"TRK67DFFF7F19562","payment_method":"flutterwave","created_at":"2025-03-23T12:33:03.000000Z"},{"id":32,"total":"2500.00","status":"completed","tracking_number":"TRK67DF61D292284","payment_method":"flutterwave","created_at":"2025-03-23T01:20:18.000000Z"},{"id":31,"total":"5000.00","status":"pending","tracking_number":"TRK67DF605D63EA9","payment_method":"flutterwave","created_at":"2025-03-23T01:14:05.000000Z"}]
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Image load error: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Navigating to GroceryScreen with groceryId: null, status: null
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-23T09:07:21.000000Z","updated_at":"2025-03-23T09:07:21.000000Z","transaction_id":null},{"id":35,"user_id":"2","items":[{"name":"Apple","price":2000,"quantity":2,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created
+I/flutter (29497): Raw grocery products data: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.00000
+I/flutter (29497): Parsed grocery products: [{id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-03-23T09:07:21.000000Z, transaction_id: null}, {id: 35, user_id: 2, items: [{name: Apple, price: 2000, quantity: 2, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T02:53:58.000000Z, updated_at: 2025-03-23T02:53:58.000000Z
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for POST /grocery: 201 - {"user_id":2,"items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":4000,"status":"pending","updated_at":"2025-03-30T11:27:42.000000Z","created_at":"2025-03-30T11:27:42.000000Z","id":38}
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Response for GET /user/groceries: 200 - []
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for POST /grocery/38/checkout: 500 - {"error":"Payment initiation failed: Flutterwave payment failed: {\"status\":\"error\",\"message\":\"connect ETIMEDOUT\",\"data\":null}"}
+I/flutter (29497): Initiate checkout failed: Exception: POST /grocery/38/checkout failed: 500 - {"error":"Payment initiation failed: Flutterwave payment failed: {\"status\":\"error\",\"message\":\"connect ETIMEDOUT\",\"data\":null}"}
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: A RenderFlex overflowed by 99946 pixels on the bottom.
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Loading image from: null
+I/flutter (29497): Loading image from: https://cdn.squaremeal.co.uk/restaurants/4992/images/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress
+I/flutter (29497): Loading image from: https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=70&w=1208&h=1080&f=faces&fit=fill
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+Another exception was thrown: SocketException: Failed host lookup: 'via.placeholder.com' (OS Error: No address associated with hostname, errno = 7)
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1](f:0,a:4) destructor()
+D/BufferQueueConsumer(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#1(BLAST Consumer)1](id:733900000001,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#0](f:0,a:4) destructor()
+D/BufferQueueConsumer(29497): [VRI[MainActivity]#0(BLAST Consumer)0](id:733900000000,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/com.llfbandit.app_links(29497): Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10600000 cmp=com.buyouyameal.chiw_express/.MainActivity (has extras) }
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/TranViewScrollBoost(29497): TRAN_SCROLL_BOOST_SUPPORT in APP, not includeInWhiteList
+D/BufferQueueConsumer(29497): [](id:733900000002,api:0,p:-1,c:29497) connect: controlledByApp=false
+E/OpenGLRenderer(29497): Unable to match the desired swap behavior.
+D/View    (29497): title:com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity
+D/BufferQueueConsumer(29497): [](id:733900000003,api:0,p:-1,c:29497) connect: controlledByApp=false
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#2](f:0,a:1) acquireNextBufferLocked size=720x1600 mFrameNumber=1 applyTransaction=true mTimestamp=13534651760728(auto) mPendingTransactions.size=0 graphicBufferId=126688650330126 transform=0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#3](f:0,a:1) acquireNextBufferLocked size=720x1520 mFrameNumber=1 applyTransaction=true mTimestamp=13534705380651(auto) mPendingTransactions.size=0 graphicBufferId=126688650330127 transform=0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#3](f:0,a:3) destructor()
+D/BufferQueueConsumer(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#3(BLAST Consumer)3](id:733900000003,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#2](f:0,a:1) destructor()
+D/BufferQueueConsumer(29497): [VRI[MainActivity]#2(BLAST Consumer)2](id:733900000002,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/com.llfbandit.app_links(29497): Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10600000 cmp=com.buyouyameal.chiw_express/.MainActivity (has extras) }
+I/TranViewScrollBoost(29497): TRAN_SCROLL_BOOST_SUPPORT in APP, not includeInWhiteList
+D/BufferQueueConsumer(29497): [](id:733900000004,api:0,p:-1,c:29497) connect: controlledByApp=false
+E/OpenGLRenderer(29497): Unable to match the desired swap behavior.
+D/View    (29497): title:com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity
+D/BufferQueueConsumer(29497): [](id:733900000005,api:0,p:-1,c:29497) connect: controlledByApp=false
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#4](f:0,a:1) acquireNextBufferLocked size=720x1600 mFrameNumber=1 applyTransaction=true mTimestamp=13537624887113(auto) mPendingTransactions.size=0 graphicBufferId=126688650330130 transform=0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#5](f:0,a:1) acquireNextBufferLocked size=720x1520 mFrameNumber=1 applyTransaction=true mTimestamp=13537670805575(auto) mPendingTransactions.size=0 graphicBufferId=126688650330131 transform=0
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#5](f:0,a:4) destructor()
+D/BufferQueueConsumer(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#5(BLAST Consumer)5](id:733900000005,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#4](f:0,a:1) destructor()
+D/BufferQueueConsumer(29497): [VRI[MainActivity]#4(BLAST Consumer)4](id:733900000004,api:0,p:-1,c:29497) disconnect
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+D/com.llfbandit.app_links(29497): Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10600000 cmp=com.buyouyameal.chiw_express/.MainActivity (has extras) }
+I/TranViewScrollBoost(29497): TRAN_SCROLL_BOOST_SUPPORT in APP, not includeInWhiteList
+D/BufferQueueConsumer(29497): [](id:733900000006,api:0,p:-1,c:29497) connect: controlledByApp=false
+E/OpenGLRenderer(29497): Unable to match the desired swap behavior.
+D/View    (29497): title:com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity
+D/BufferQueueConsumer(29497): [](id:733900000007,api:0,p:-1,c:29497) connect: controlledByApp=false
+D/BLASTBufferQueue(29497): [VRI[MainActivity]#6](f:0,a:1) acquireNextBufferLocked size=720x1600 mFrameNumber=1 applyTransaction=true mTimestamp=13544034918883(auto) mPendingTransactions.size=0 graphicBufferId=126688650330138 transform=0
+D/BLASTBufferQueue(29497): [SurfaceView[com.buyouyameal.chiw_express/com.buyouyameal.chiw_express.MainActivity]#7](f:0,a:1) acquireNextBufferLocked size=720x1520 mFrameNumber=1 applyTransaction=true mTimestamp=13544060049652(auto) mPendingTransactions.size=0 graphicBufferId=126688650330139 transform=0
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Navigating to CreateGroceryProductScreen from Home
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+Another exception was thrown: A RenderFlex overflowed by 42 pixels on the right.
+I/al.chiw_express(29497): Background concurrent mark compact GC freed 2826KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3144KB/6289KB, paused 265us,5.906ms total 90.037ms
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Checking access - Role: restaurant_owner, Is Owner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: A RenderFlex overflowed by 70 pixels on the right.
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurant-owner/data: 404 - {"error":"No restaurants found for this owner"}
+I/flutter (29497): Get restaurant owner data failed: Exception: GET /restaurant-owner/data failed: 404 - {"error":"No restaurants found for this owner"}
+I/flutter (29497): Navigating to OrderScreen with orderId: null, status: null
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /orders: 200 - [{"id":33,"total":"7200.00","status":"pending","tracking_number":"TRK67DFFF7F19562","payment_method":"flutterwave","created_at":"2025-03-23T12:33:03.000000Z"},{"id":32,"total":"2500.00","status":"completed","tracking_number":"TRK67DF61D292284","payment_method":"flutterwave","created_at":"2025-03-23T01:20:18.000000Z"},{"id":31,"total":"5000.00","status":"pending","tracking_number":"TRK67DF605D63EA9","payment_method":"flutterwave","created_at":"2025-03-23T01:14:05.000000Z"}]
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for PUT /profile: 200 - {"message":"Profile updated successfully","user":{"name":"versatile153","email":"ceze46321@gmail.com","role":"restaurant_owner","delivery_location":null,"phone":null,"vehicle":null}}
+I/flutter (29497): Parsing admin value: "null" (type: Null)
+I/flutter (29497): Admin value is null, returning false
+I/flutter (29497): Update profile admin status: null (parsed to false)
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/flutter (29497): HomeScreen - Role: restaurant_owner, IsRestaurantOwner: true
+I/ScrollIdentify(29497): on fling
+I/ScrollIdentify(29497): on fling
+I/al.chiw_express(29497): Background concurrent mark compact GC freed 850KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 2972KB/5945KB, paused 228us,6.260ms total 28.106ms
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): Response for PUT /profile: 200 - {"message":"Profile updated successfully","user":{"name":"versatile153","email":"ceze46321@gmail.com","role":"dasher","delivery_location":null,"phone":null,"vehicle":null}}
+I/flutter (29497): Parsing admin value: "null" (type: Null)
+I/flutter (29497): Admin value is null, returning false
+I/flutter (29497): Update profile admin status: null (parsed to false)
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+I/ScrollIdentify(29497): on fling
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/GED     (29497): ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 24, oppidx_max 24, oppidx_min 0
+I/flutter (29497): Response for GET /restaurants: 200 - {"success":true,"data":[{"id":26,"user_id":null,"fsq_id":"custom_test","name":"Test Restaurant","address":"123 Test St","state":"Lagos","city":null,"country":"Nigeria","category":"Test","latitude":null,"longitude":null,"image":null,"created_at":"2025-03-23T10:49:20.000000Z","updated_at":"2025-03-23T10:49:20.000000Z","menus":[]},{"id":25,"user_id":null,"fsq_id":"custom_67df59b05bbe2","name":"Versace Fast Food","address":"no 34 Aba street","state":"Abia","city":null,"country":"Nigeria","category":"Restaurant","latitude":null,"longitude":null,"image":"https:\/\/cdn.squaremeal.co.uk\/restaurants\/4992\/images\/c8d176e7-5045-40f6-a442-89cc2bdd2b50.jpg?w=518&h=345&fit=crop&auto=format%2Ccompress","created_at":"2025-03-23T00:45:36.000000Z","updated_at":"2025-03-23T00:45:36.000000Z","menus":[{"id":86,"restaurant_id":"25","fsq_id":null,"name":"Afican Salad","description":null,"price":"2500.00","image":null,"category":"Unknown","created_at":"2025-03-23T00:45:36.000000Z","updated_at
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): Response for GET /grocery: 200 - [{"id":38,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":1,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","status":"pending","created_at":"2025-03-30T11:27:42.000000Z","updated_at":"2025-03-30T11:27:42.000000Z","transaction_id":null},{"id":37,"user_id":"2","items":[{"name":"Cucumber","price":5.49,"quantity":4,"image":"https:\/\/c.files.bbci.co.uk\/1293B\/production\/_119919067_p09mtbgc.jpg"}],"total_amount":"2000.00","status":"pending","created_at":"2025-03-23T11:07:56.000000Z","updated_at":"2025-03-26T06:14:56.000000Z","transaction_id":null},{"id":36,"user_id":"2","items":[{"name":"Apple","quantity":2,"ordered_quantity":2,"price":2000,"image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a6\/Pink_lady_and_cross_section.jpg\/1200px-Pink_lady_and_cross_section.jpg"}],"total_amount":"4000.00","statu
+I/flutter (29497): Raw grocery products data: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025
+I/flutter (29497): Parsed grocery products: [{id: 38, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 1, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-30T11:27:42.000000Z, updated_at: 2025-03-30T11:27:42.000000Z, transaction_id: null}, {id: 37, user_id: 2, items: [{name: Cucumber, price: 5.49, quantity: 4, image: https://c.files.bbci.co.uk/1293B/production/_119919067_p09mtbgc.jpg}], total_amount: 2000.00, status: pending, created_at: 2025-03-23T11:07:56.000000Z, updated_at: 2025-03-26T06:14:56.000000Z, transaction_id: null}, {id: 36, user_id: 2, items: [{name: Apple, quantity: 2, ordered_quantity: 2, price: 2000, image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/1200px-Pink_lady_and_cross_section.jpg}], total_amount: 4000.00, status: pending, created_at: 2025-03-23T09:07:21.000000Z, updated_at: 2025-0
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+I/flutter (29497): HomeScreen - Role: dasher, IsRestaurantOwner: false
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Another exception was thrown: type 'String' is not a subtype of type 'num?' in type cast
+Application finished.
+Terminate batch job (Y/N)? 
+^C

@@ -15,21 +15,23 @@ if (localPropertiesFile.exists()) {
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode', '1')
 def flutterVersionName = localProperties.getProperty('flutter.versionName', '1.0')
 
-// Load signing configuration from key.properties or environment variables (for Codemagic)
+// Load signing configuration from key.properties
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('android/key.properties') // Updated path
+def keystorePropertiesFile = rootProject.file('key.properties')
+println "Looking for key.properties at: ${keystorePropertiesFile.absolutePath}"
 if (keystorePropertiesFile.exists()) {
+    println "key.properties found!"
     keystorePropertiesFile.withReader('UTF-8') { reader ->
         keystoreProperties.load(reader)
     }
 } else {
-    println "⚠️ WARNING: Keystore file 'android/key.properties' not found! Will attempt to use Codemagic environment variables for signing."
+    throw new GradleException("Keystore file 'key.properties' not found at ${keystorePropertiesFile.absolutePath}! Please ensure it exists with the correct signing configuration.")
 }
 
 android {
     namespace "com.buyouyameal.chiw_express"
     compileSdk 34
-    ndkVersion "25.1.8937393" // Added for consistency with previous setup
+    ndkVersion "25.1.8937393"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -41,7 +43,7 @@ android {
     }
 
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin' // Added for Kotlin source compatibility
+        main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
@@ -54,27 +56,26 @@ android {
 
     signingConfigs {
         release {
-            if (System.getenv("CM_KEYSTORE_PATH")) {
-                // Use Codemagic environment variables for signing
-                storeFile file(System.getenv("CM_KEYSTORE_PATH"))
-                storePassword System.getenv("CM_KEYSTORE_PASSWORD")
-                keyAlias System.getenv("CM_KEY_ALIAS")
-                keyPassword System.getenv("CM_KEY_PASSWORD")
-            } else if (keystorePropertiesFile.exists()) {
-                // Use local key.properties for signing
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile file(keystoreProperties['storeFile'] ?: "keystore.jks") // Updated to point to android/app/keystore.jks
-                storePassword keystoreProperties['storePassword']
-            } else {
-                throw new GradleException("Keystore file not found. Please ensure android/key.properties exists or Codemagic environment variables are set.")
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            def storeFilePath = keystoreProperties['storeFile'] ?: "keystore.jks"
+            def storeFile = file(storeFilePath)
+            println "Looking for keystore.jks at: ${storeFile.absolutePath}"
+            if (!storeFile.exists()) {
+                throw new GradleException("Keystore file not found at ${storeFile.absolutePath}!")
             }
+            storeFile = storeFile
+            storePassword keystoreProperties['storePassword']
+            println "Signing Config - keyAlias: ${keyAlias}"
+            println "Signing Config - keyPassword: ${keyPassword}"
+            println "Signing Config - storeFile: ${storeFile.absolutePath}"
+            println "Signing Config - storePassword: ${storePassword}"
         }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            signingConfig null // Disable automatic signing
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -82,7 +83,7 @@ android {
     }
 }
 
-// Normalize file paths for Windows (to fix app.so URI issue on local builds)
+// Normalize file paths for Windows (to fix app.so URI issue)
 gradle.taskGraph.whenReady { taskGraph ->
     taskGraph.allTasks.each { task ->
         if (task.name.contains("compileFlutterBuild")) {
@@ -99,7 +100,7 @@ gradle.taskGraph.whenReady { taskGraph ->
 }
 
 flutter {
-    source '../..'
+    source 'C:/Users/ifben/development/food_app_clean/canibuyyouameal/food_delivery_app_new'
 }
 
 dependencies {

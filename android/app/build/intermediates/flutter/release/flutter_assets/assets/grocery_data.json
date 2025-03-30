@@ -1,7 +1,0 @@
-[
-    {"id": 1, "name": "Apples", "price": 2.99, "image": "apples.jpg", "location": "Store A"},
-    {"id": 2, "name": "Bread", "price": 1.49, "image": "bread.jpg", "location": "Store B"},
-    {"id": 3, "name": "Milk", "price": 3.25, "image": "milk.jpg", "location": "Store A"},
-    {"id": 4, "name": "Eggs", "price": 2.50, "image": "eggs.jpg", "location": "Store C"},
-    {"id": 5, "name": "Bananas", "price": 1.99, "image": "bananas.jpg", "location": "Store B"}
-  ]
