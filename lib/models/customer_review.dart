@@ -1,65 +1,85 @@
-/// Represents a customer review for an order.
+import 'package:flutter/foundation.dart'; // Add this import for debugPrint
+
 class CustomerReview {
-  /// Unique identifier for the review.
   final int id;
-
-  /// ID of the customer who wrote the review.
   final int customerId;
-
-  /// ID of the order being reviewed.
-  final int orderId;
-
-  /// Rating given by the customer (1-5).
+  final int? orderId;
   final int rating;
-
-  /// Comment provided by the customer (optional).
   final String? comment;
-
-  /// Name of the customer (for display purposes).
   final String customerName;
-
-  /// Timestamp when the review was created.
   final DateTime createdAt;
-
-  /// Timestamp when the review was last updated (optional).
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   CustomerReview({
     required this.id,
     required this.customerId,
-    required this.orderId,
+    this.orderId,
     required this.rating,
     this.comment,
     required this.customerName,
     required this.createdAt,
-    this.updatedAt,
+    required this.updatedAt,
   });
 
-  /// Creates a [CustomerReview] from a JSON map (Laravel API response).
   factory CustomerReview.fromJson(Map<String, dynamic> json) {
-    return CustomerReview(
-      id: json['id'] as int,
-      customerId: json['customer_id'] as int,
-      orderId: json['order_id'] as int,
-      rating: json['rating'] as int,
-      comment: json['comment'] as String?,
-      customerName: json['customer_name'] as String? ?? 'Anonymous',
-      createdAt: DateTime.parse(json['created_at'] as String),
-      updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-    );
+    try {
+      return CustomerReview(
+        id: _parseInt(json['id'], 'id'),
+        customerId: _parseInt(json['customer_id'], 'customer_id'),
+        orderId: json['order_id'] != null
+            ? _parseInt(json['order_id'], 'order_id')
+            : null,
+        rating: _parseInt(json['rating'], 'rating'),
+        comment: json['comment'] as String?,
+        customerName: json['customer_name'] as String? ?? 'Unknown Customer',
+        createdAt: _parseDateTime(json['created_at'], 'created_at'),
+        updatedAt: _parseDateTime(json['updated_at'], 'updated_at'),
+      );
+    } catch (e, stackTrace) {
+      debugPrint('Error parsing CustomerReview: $e\n$stackTrace');
+      rethrow; // Rethrow the exception for debugging, but you can handle it differently if needed
+    }
   }
 
-  /// Converts the [CustomerReview] to a JSON map.
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'customer_id': customerId,
-      'order_id': orderId,
-      'rating': rating,
-      'comment': comment,
-      'customer_name': customerName,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt?.toIso8601String(),
-    };
+  // Helper method to parse int values safely
+  static int _parseInt(dynamic value, String fieldName) {
+    if (value == null) {
+      throw FormatException('$fieldName is null');
+    }
+    if (value is int) {
+      return value;
+    }
+    if (value is String) {
+      try {
+        return int.parse(value);
+      } catch (e) {
+        throw FormatException('Invalid $fieldName format: $value');
+      }
+    }
+    throw FormatException(
+        '$fieldName must be an int or String, got ${value.runtimeType}');
+  }
+
+  // Helper method to parse DateTime values safely
+  static DateTime _parseDateTime(dynamic value, String fieldName) {
+    if (value == null) {
+      throw FormatException('$fieldName is null');
+    }
+    if (value is String) {
+      try {
+        return DateTime.parse(value);
+      } catch (e) {
+        throw FormatException('Invalid $fieldName format: $value');
+      }
+    }
+    throw FormatException(
+        '$fieldName must be a String, got ${value.runtimeType}');
+  }
+
+  @override
+  String toString() {
+    return 'CustomerReview(id: $id, customerId: $customerId, orderId: $orderId, '
+        'rating: $rating, comment: $comment, customerName: $customerName, '
+        'createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }

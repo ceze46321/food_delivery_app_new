@@ -11,12 +11,22 @@ class CustomerReviewScreen extends StatefulWidget {
   State<CustomerReviewScreen> createState() => _CustomerReviewScreenState();
 }
 
-class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
+class _CustomerReviewScreenState extends State<CustomerReviewScreen>
+    with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
+  late AnimationController _animationController;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    )..repeat(reverse: true);
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.2).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     if (!authProvider.isLoadingReviews && authProvider.reviews.isEmpty) {
       authProvider.fetchCustomerReviews();
@@ -47,54 +57,108 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
       context: context,
       builder: (context) => StatefulBuilder(
         builder: (context, setState) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          backgroundColor: Colors.white, // DoorDash white background
           title: Text(
             'Write a Review',
-            style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor),
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: textColor,
+            ),
           ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Rating',
-                style: GoogleFonts.poppins(fontSize: 14, color: textColor),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: List.generate(5, (index) {
-                  return IconButton(
-                    icon: Icon(
-                      index < rating ? Icons.star : Icons.star_border,
-                      color: Colors.amber,
+          content: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight:
+                  MediaQuery.of(context).size.height * 0.5, // Limit height
+              maxWidth: MediaQuery.of(context).size.width * 0.8, // Limit width
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'How would you rate your experience?',
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: textColor.withOpacity(0.8),
                     ),
-                    onPressed: () {
-                      setState(() => rating = index + 1);
-                    },
-                  );
-                }),
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                controller: commentController,
-                decoration: InputDecoration(
-                  labelText: 'Your Comment',
-                  labelStyle: GoogleFonts.poppins(color: textColor.withOpacity(0.7)),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: primaryColor),
                   ),
-                ),
-                maxLines: 3,
+                  const SizedBox(height: 12),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(5, (index) {
+                        return IconButton(
+                          icon: Icon(
+                            index < rating ? Icons.star : Icons.star_border,
+                            color: Colors.amber,
+                            size: 32, // Reduced size to fit better
+                          ),
+                          onPressed: () {
+                            setState(() => rating = index + 1);
+                          },
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 4), // Reduced padding
+                          constraints:
+                              const BoxConstraints(), // Remove default constraints
+                        );
+                      }),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Tell us more (optional)',
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: textColor.withOpacity(0.8),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxHeight: 120, // Limit TextField height
+                    ),
+                    child: TextField(
+                      controller: commentController,
+                      decoration: InputDecoration(
+                        hintText: 'Share your thoughts...',
+                        hintStyle: GoogleFonts.poppins(
+                          color: textColor.withOpacity(0.5),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                              color: Color(0xFFFF3008)), // DoorDash red
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade50,
+                      ),
+                      maxLines: 3, // Reduced to prevent overflow
+                      maxLength: 500,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Cancel', style: GoogleFonts.poppins(color: Colors.grey)),
+              child: Text(
+                'Cancel',
+                style: GoogleFonts.poppins(
+                  color: Colors.grey,
+                  fontSize: 16,
+                ),
+              ),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -102,38 +166,70 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
                   try {
                     await authProvider.submitReview(
                       rating,
-                      commentController.text.isEmpty ? null : commentController.text,
+                      commentController.text.isEmpty
+                          ? null
+                          : commentController.text,
                       // orderId: 123, // Uncomment and set if tied to an order
                     );
                     Navigator.pop(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Review submitted!', style: GoogleFonts.poppins()),
-                        backgroundColor: accentColor,
+                        content: Text(
+                          'Review submitted!',
+                          style: GoogleFonts.poppins(color: Colors.white),
+                        ),
+                        backgroundColor:
+                            const Color(0xFFFF3008), // DoorDash red
+                        duration: const Duration(seconds: 2),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     );
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Failed to submit review: $e', style: GoogleFonts.poppins()),
+                        content: Text(
+                          'Failed to submit review: $e',
+                          style: GoogleFonts.poppins(color: Colors.white),
+                        ),
                         backgroundColor: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     );
                   }
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Please provide a rating', style: GoogleFonts.poppins()),
+                      content: Text(
+                        'Please provide a rating',
+                        style: GoogleFonts.poppins(color: Colors.white),
+                      ),
                       backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
                   );
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: accentColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                backgroundColor: const Color(0xFFFF3008), // DoorDash red
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),
-              child: Text('Submit', style: GoogleFonts.poppins(color: Colors.white)),
+              child: Text(
+                'Submit',
+                style: GoogleFonts.poppins(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
             ),
           ],
         ),
@@ -142,32 +238,48 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
+          onPressed: () => Navigator.pop(context),
+        ),
         title: Text(
           'Customer Reviews',
           style: GoogleFonts.poppins(
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        backgroundColor: primaryColor,
+        backgroundColor: const Color(0xFFFF3008), // DoorDash red
         elevation: 0,
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh, color: Colors.white),
+            icon: const Icon(Icons.refresh, color: Colors.white, size: 28),
             onPressed: () {
               authProvider.fetchCustomerReviews();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Refreshing reviews...', style: GoogleFonts.poppins()),
-                  backgroundColor: accentColor,
+                  content: Text(
+                    'Refreshing reviews...',
+                    style: GoogleFonts.poppins(color: Colors.white),
+                  ),
+                  backgroundColor: const Color(0xFFFF3008), // DoorDash red
                   duration: const Duration(seconds: 2),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               );
             },
@@ -176,97 +288,128 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              primaryColor.withOpacity(0.1),
-              Colors.white,
-            ],
-          ),
-        ),
+        color: Colors.white, // DoorDash white background
         child: authProvider.isLoadingReviews
             ? const Center(
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(accentColor),
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                      Color(0xFFFF3008)), // DoorDash red
                 ),
               )
             : authProvider.reviews.isEmpty
                 ? Center(
-                    child: Text(
-                      'No reviews available yet',
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        color: textColor.withOpacity(0.7),
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ScaleTransition(
+                          scale: _scaleAnimation,
+                          child: Icon(
+                            Icons.star_border,
+                            size: 64,
+                            color: textColor.withOpacity(0.3),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          'No reviews yet',
+                          style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            color: textColor.withOpacity(0.7),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Be the first to share your experience!',
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: textColor.withOpacity(0.5),
+                          ),
+                        ),
+                      ],
                     ),
                   )
-                : GridView.builder(
-                    padding: const EdgeInsets.all(16.0),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12.0,
-                      mainAxisSpacing: 12.0,
-                      childAspectRatio: 0.8,
-                    ),
+                : ListView.separated(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
                     itemCount: authProvider.reviews.length,
+                    separatorBuilder: (context, index) => Divider(
+                      color: Colors.grey.shade300,
+                      height: 1,
+                    ),
                     itemBuilder: (context, index) {
                       final review = authProvider.reviews[index];
-                      return Card(
-                        elevation: 4,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        color: Colors.white,
-                        child: Padding(
-                          padding: const EdgeInsets.all(14.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: List.generate(
-                                  review.rating,
-                                  (i) => const Icon(Icons.star, color: Colors.amber, size: 18),
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                review.customerName,
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CircleAvatar(
+                              radius: 24,
+                              backgroundColor: const Color(0xFFFF3008)
+                                  .withOpacity(0.2), // DoorDash red
+                              child: Text(
+                                review.customerName[0].toUpperCase(),
                                 style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: textColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      const Color(0xFFFF3008), // DoorDash red
                                 ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
                               ),
-                              const SizedBox(height: 8),
-                              Expanded(
-                                child: Text(
-                                  review.comment ?? 'No comment provided',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 12,
-                                    color: textColor.withOpacity(0.8),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        review.customerName,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: textColor,
+                                        ),
+                                      ),
+                                      Text(
+                                        review.createdAt
+                                            .toLocal()
+                                            .toString()
+                                            .split('.')[0],
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  maxLines: 4,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                                  const SizedBox(height: 4),
+                                  Row(
+                                    children: List.generate(
+                                      review.rating,
+                                      (i) => const Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 16,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    review.comment ?? 'No comment provided',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      color: textColor.withOpacity(0.8),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              const SizedBox(height: 8),
-                              Text(
-                                'Reviewed: ${review.createdAt.toLocal().toString().split('.')[0]}',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 10,
-                                  color: Colors.grey[600],
-                                  fontStyle: FontStyle.italic,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       );
                     },
@@ -275,14 +418,17 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.restaurant), label: 'Restaurants'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Orders'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.restaurant), label: 'Restaurants'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), label: 'Orders'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Owner'),
-          BottomNavigationBarItem(icon: Icon(Icons.directions_bike), label: 'Dasher'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.directions_bike), label: 'Dasher'),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: accentColor,
+        selectedItemColor: const Color(0xFFFF3008), // DoorDash red
         unselectedItemColor: textColor.withOpacity(0.6),
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
@@ -293,9 +439,9 @@ class _CustomerReviewScreenState extends State<CustomerReviewScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showWriteReviewDialog(context),
-        backgroundColor: accentColor,
+        backgroundColor: const Color(0xFFFF3008), // DoorDash red
         tooltip: 'Write a Review',
-        child: const Icon(Icons.edit, color: Colors.white),
+        child: const Icon(Icons.rate_review, color: Colors.white, size: 28),
       ),
     );
   }

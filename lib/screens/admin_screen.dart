@@ -55,14 +55,16 @@ class _AdminScreenState extends State<AdminScreen> {
   }
 
   // Show email dialog
-  Future<void> _showEmailDialog(BuildContext context, AuthProvider authProvider, {String? userId, List<String>? userIds}) async {
+  Future<void> _showEmailDialog(BuildContext context, AuthProvider authProvider,
+      {String? userId, List<String>? userIds}) async {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         title: Text(
           userId != null ? 'Send Email' : 'Send Bulk Email',
-          style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: doorDashRed),
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.bold, color: doorDashRed),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -71,7 +73,8 @@ class _AdminScreenState extends State<AdminScreen> {
               controller: _emailSubjectController,
               decoration: InputDecoration(
                 labelText: 'Subject',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               ),
             ),
             const SizedBox(height: 12),
@@ -79,7 +82,8 @@ class _AdminScreenState extends State<AdminScreen> {
               controller: _emailMessageController,
               decoration: InputDecoration(
                 labelText: 'Message',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               ),
               maxLines: 3,
             ),
@@ -88,7 +92,8 @@ class _AdminScreenState extends State<AdminScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel', style: GoogleFonts.poppins(color: doorDashRed)),
+            child:
+                Text('Cancel', style: GoogleFonts.poppins(color: doorDashRed)),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -111,7 +116,8 @@ class _AdminScreenState extends State<AdminScreen> {
                     await authProvider.sendAdminEmail(subject, message, id);
                   }
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Bulk emails sent successfully')),
+                    const SnackBar(
+                        content: Text('Bulk emails sent successfully')),
                   );
                 }
                 Navigator.pop(context);
@@ -119,15 +125,19 @@ class _AdminScreenState extends State<AdminScreen> {
                 _emailMessageController.clear();
               } catch (e) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Failed to send email: $e'), backgroundColor: Colors.redAccent),
+                  SnackBar(
+                      content: Text('Failed to send email: $e'),
+                      backgroundColor: Colors.redAccent),
                 );
               }
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: warmCoral,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
             ),
-            child: Text('Send', style: GoogleFonts.poppins(color: Colors.white)),
+            child:
+                Text('Send', style: GoogleFonts.poppins(color: Colors.white)),
           ),
         ],
       ),
@@ -161,7 +171,9 @@ class _AdminScreenState extends State<AdminScreen> {
     return Scaffold(
       backgroundColor: lightGray,
       appBar: AppBar(
-        title: Text('Admin Dashboard', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
+        title: Text('Admin Dashboard',
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: doorDashRed,
         elevation: 0,
         actions: [
@@ -195,10 +207,12 @@ class _AdminScreenState extends State<AdminScreen> {
               future: _usersFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator(color: doorDashRed));
+                  return const Center(
+                      child: CircularProgressIndicator(color: doorDashRed));
                 }
                 if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}', style: GoogleFonts.poppins(color: Colors.red));
+                  return Text('Error: ${snapshot.error}',
+                      style: GoogleFonts.poppins(color: Colors.red));
                 }
                 final users = snapshot.data ?? [];
                 return Column(
@@ -206,7 +220,8 @@ class _AdminScreenState extends State<AdminScreen> {
                     GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
                         maxCrossAxisExtent: 300,
                         childAspectRatio: 1.3,
                         crossAxisSpacing: 16,
@@ -217,7 +232,8 @@ class _AdminScreenState extends State<AdminScreen> {
                         final user = users[index];
                         return Card(
                           elevation: 4,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
                           child: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Column(
@@ -226,35 +242,50 @@ class _AdminScreenState extends State<AdminScreen> {
                               children: [
                                 Text(
                                   user['name'] ?? 'Unnamed',
-                                  style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600),
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                                 GestureDetector(
-                                  onTap: () => _launchUrl('mailto:${user['email']}'),
+                                  onTap: () =>
+                                      _launchUrl('mailto:${user['email']}'),
                                   child: Text(
                                     'Email: ${user['email'] ?? 'N/A'}',
-                                    style: GoogleFonts.poppins(fontSize: 14, color: Colors.blue),
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 14, color: Colors.blue),
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () => _launchUrl('tel:${user['phone']}'),
+                                  onTap: () =>
+                                      _launchUrl('tel:${user['phone']}'),
                                   child: Text(
                                     'Phone: ${user['phone'] ?? 'N/A'}',
-                                    style: GoogleFonts.poppins(fontSize: 14, color: Colors.blue),
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 14, color: Colors.blue),
                                   ),
                                 ),
-                                Text('Role: ${user['role'] ?? 'N/A'}', style: GoogleFonts.poppins(fontSize: 14)),
+                                Text('Role: ${user['role'] ?? 'N/A'}',
+                                    style: GoogleFonts.poppins(fontSize: 14)),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     ElevatedButton(
-                                      onPressed: () => _showEmailDialog(context, authProvider, userId: user['id'].toString()),
+                                      onPressed: () => _showEmailDialog(
+                                          context, authProvider,
+                                          userId: user['id'].toString()),
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: warmCoral,
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 12, vertical: 8),
                                       ),
-                                      child: Text('Email', style: GoogleFonts.poppins(fontSize: 12, color: Colors.white)),
+                                      child: Text('Email',
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 12,
+                                              color: Colors.white)),
                                     ),
                                   ],
                                 ),
@@ -266,13 +297,19 @@ class _AdminScreenState extends State<AdminScreen> {
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed: () => _showEmailDialog(context, authProvider, userIds: users.map((u) => u['id'].toString()).toList()),
+                      onPressed: () => _showEmailDialog(context, authProvider,
+                          userIds:
+                              users.map((u) => u['id'].toString()).toList()),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: warmCoral,
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 12),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
                       ),
-                      child: Text('Send Bulk Email', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white)),
+                      child: Text('Send Bulk Email',
+                          style: GoogleFonts.poppins(
+                              fontSize: 16, color: Colors.white)),
                     ),
                   ],
                 );
@@ -286,10 +323,12 @@ class _AdminScreenState extends State<AdminScreen> {
               future: _restaurantsFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator(color: doorDashRed));
+                  return const Center(
+                      child: CircularProgressIndicator(color: doorDashRed));
                 }
                 if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}', style: GoogleFonts.poppins(color: Colors.red));
+                  return Text('Error: ${snapshot.error}',
+                      style: GoogleFonts.poppins(color: Colors.red));
                 }
                 final restaurants = snapshot.data ?? [];
                 return GridView.builder(
@@ -304,10 +343,12 @@ class _AdminScreenState extends State<AdminScreen> {
                   itemCount: restaurants.length,
                   itemBuilder: (context, index) {
                     final restaurant = restaurants[index];
-                    final menuItems = restaurant['menu_items'] as List<dynamic>? ?? [];
+                    final menuItems =
+                        restaurant['menu_items'] as List<dynamic>? ?? [];
                     return Card(
                       elevation: 4,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Column(
@@ -315,7 +356,8 @@ class _AdminScreenState extends State<AdminScreen> {
                           children: [
                             Text(
                               restaurant['name'] ?? 'Unnamed',
-                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 8),
                             Expanded(
@@ -324,53 +366,81 @@ class _AdminScreenState extends State<AdminScreen> {
                                 itemCount: menuItems.length,
                                 itemBuilder: (context, menuIndex) {
                                   final menu = menuItems[menuIndex];
-                                  final controller = TextEditingController(text: menu['price']?.toString() ?? '0');
+                                  final controller = TextEditingController(
+                                      text: menu['price']?.toString() ?? '0');
                                   return Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 4.0),
                                     child: Row(
                                       children: [
                                         Expanded(
                                           child: Text(
                                             menu['name'] ?? 'Item',
-                                            style: GoogleFonts.poppins(fontSize: 14),
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 14),
                                           ),
                                         ),
                                         SizedBox(
                                           width: 80,
                                           child: TextField(
                                             controller: controller,
-                                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                                            keyboardType:
+                                                TextInputType.numberWithOptions(
+                                                    decimal: true),
                                             decoration: InputDecoration(
-                                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-                                              contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              contentPadding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 8),
                                             ),
-                                            style: GoogleFonts.poppins(fontSize: 14),
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 14),
                                           ),
                                         ),
                                         const SizedBox(width: 8),
                                         ElevatedButton(
                                           onPressed: () async {
-                                            final price = double.tryParse(controller.text);
+                                            final price = double.tryParse(
+                                                controller.text);
                                             if (price != null && price >= 0) {
                                               try {
-                                                await authProvider.updateMenuPrice(menu['id'].toString(), price);
-                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                  const SnackBar(content: Text('Menu price updated')),
+                                                await authProvider
+                                                    .updateMenuPrice(
+                                                        menu['id'].toString(),
+                                                        price);
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  const SnackBar(
+                                                      content: Text(
+                                                          'Menu price updated')),
                                                 );
                                                 _refreshData(authProvider);
                                               } catch (e) {
-                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                  SnackBar(content: Text('Error: $e'), backgroundColor: Colors.redAccent),
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                      content:
+                                                          Text('Error: $e'),
+                                                      backgroundColor:
+                                                          Colors.redAccent),
                                                 );
                                               }
                                             }
                                           },
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: warmCoral,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 12, vertical: 8),
                                           ),
-                                          child: Text('Save', style: GoogleFonts.poppins(fontSize: 12, color: Colors.white)),
+                                          child: Text('Save',
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 12,
+                                                  color: Colors.white)),
                                         ),
                                       ],
                                     ),
@@ -394,10 +464,12 @@ class _AdminScreenState extends State<AdminScreen> {
               future: _groceriesFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator(color: doorDashRed));
+                  return const Center(
+                      child: CircularProgressIndicator(color: doorDashRed));
                 }
                 if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}', style: GoogleFonts.poppins(color: Colors.red));
+                  return Text('Error: ${snapshot.error}',
+                      style: GoogleFonts.poppins(color: Colors.red));
                 }
                 final groceries = snapshot.data ?? [];
                 return GridView.builder(
@@ -415,7 +487,8 @@ class _AdminScreenState extends State<AdminScreen> {
                     final items = grocery['items'] as List<dynamic>? ?? [];
                     return Card(
                       elevation: 4,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Column(
@@ -423,7 +496,8 @@ class _AdminScreenState extends State<AdminScreen> {
                           children: [
                             Text(
                               'Grocery #${grocery['id']}',
-                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 8),
                             Expanded(
@@ -432,57 +506,83 @@ class _AdminScreenState extends State<AdminScreen> {
                                 itemCount: items.length,
                                 itemBuilder: (context, itemIndex) {
                                   final item = items[itemIndex];
-                                  final controller = TextEditingController(text: item['price']?.toString() ?? '0');
+                                  final controller = TextEditingController(
+                                      text: item['price']?.toString() ?? '0');
                                   return Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 4.0),
                                     child: Row(
                                       children: [
                                         Expanded(
                                           child: Text(
                                             item['name'] ?? 'Item',
-                                            style: GoogleFonts.poppins(fontSize: 14),
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 14),
                                           ),
                                         ),
                                         SizedBox(
                                           width: 80,
                                           child: TextField(
                                             controller: controller,
-                                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                                            keyboardType:
+                                                TextInputType.numberWithOptions(
+                                                    decimal: true),
                                             decoration: InputDecoration(
-                                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-                                              contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              contentPadding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 8),
                                             ),
-                                            style: GoogleFonts.poppins(fontSize: 14),
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 14),
                                           ),
                                         ),
                                         const SizedBox(width: 8),
                                         ElevatedButton(
                                           onPressed: () async {
-                                            final price = double.tryParse(controller.text);
+                                            final price = double.tryParse(
+                                                controller.text);
                                             if (price != null && price >= 0) {
                                               try {
-                                                await authProvider.updateGroceryItemPrice(
+                                                await authProvider
+                                                    .updateGroceryItemPrice(
                                                   grocery['id'].toString(),
                                                   price,
                                                   itemIndex: itemIndex,
                                                 );
-                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                  const SnackBar(content: Text('Grocery price updated')),
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  const SnackBar(
+                                                      content: Text(
+                                                          'Grocery price updated')),
                                                 );
                                                 _refreshData(authProvider);
                                               } catch (e) {
-                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                  SnackBar(content: Text('Error: $e'), backgroundColor: Colors.redAccent),
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                      content:
+                                                          Text('Error: $e'),
+                                                      backgroundColor:
+                                                          Colors.redAccent),
                                                 );
                                               }
                                             }
                                           },
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: warmCoral,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 12, vertical: 8),
                                           ),
-                                          child: Text('Save', style: GoogleFonts.poppins(fontSize: 12, color: Colors.white)),
+                                          child: Text('Save',
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 12,
+                                                  color: Colors.white)),
                                         ),
                                       ],
                                     ),
@@ -509,7 +609,8 @@ class _AdminScreenState extends State<AdminScreen> {
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Text(
         title,
-        style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600, color: deepBrown),
+        style: GoogleFonts.poppins(
+            fontSize: 22, fontWeight: FontWeight.w600, color: deepBrown),
       ),
     );
   }

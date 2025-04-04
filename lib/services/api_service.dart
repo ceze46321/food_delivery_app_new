@@ -4,12 +4,15 @@ import 'package:http/http.dart' as http;
 import 'package:geocoding/geocoding.dart';
 import 'package:flutter/foundation.dart'; // For debugPrint
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:io'; // For File
 
 class ApiService {
   static const String baseUrl = 'https://plus.apexjets.org/api';
   static const String overpassUrl = 'https://overpass-api.de/api/interpreter';
-  static const String googlePlacesUrl = 'https://maps.googleapis.com/maps/api/place';
-  static String get googleApiKey => dotenv.env['GOOGLE_API_KEY'] ?? 'YOUR_GOOGLE_API_KEY';
+  static const String googlePlacesUrl =
+      'https://maps.googleapis.com/maps/api/place';
+  static String get googleApiKey =>
+      dotenv.env['GOOGLE_API_KEY'] ?? 'YOUR_GOOGLE_API_KEY';
   String? _token;
 
   // Singleton pattern
@@ -31,7 +34,7 @@ class ApiService {
   Future<void> loadToken() async {
     final prefs = await SharedPreferences.getInstance();
     _token = prefs.getString('auth_token');
-    if (kDebugMode) print('Token loaded: $_token');
+    if (kDebugMode) debugPrint('Token loaded: $_token');
   }
 
   // Set token and persist it
@@ -39,7 +42,7 @@ class ApiService {
     _token = token;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('auth_token', token);
-    if (kDebugMode) print('Token set: $_token');
+    if (kDebugMode) debugPrint('Token set: $_token');
   }
 
   // Clear token
@@ -47,12 +50,15 @@ class ApiService {
     _token = null;
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('auth_token');
-    if (kDebugMode) print('Token cleared');
+    if (kDebugMode) debugPrint('Token cleared');
   }
 
   // Generic HTTP Methods
   Future<dynamic> get(String path) async {
-    if (_token == null && !path.startsWith('/login') && !path.startsWith('/register') && !path.startsWith('/admin/login')) {
+    if (_token == null &&
+        !path.startsWith('/login') &&
+        !path.startsWith('/register') &&
+        !path.startsWith('/admin/login')) {
       throw Exception('No token set. Please log in.');
     }
     final url = '$baseUrl$path';
@@ -61,20 +67,60 @@ class ApiService {
   }
 
   Future<dynamic> post(String path, dynamic data) async {
-    if (_token == null && !path.startsWith('/login') && !path.startsWith('/register') && !path.startsWith('/admin/login')) {
+    if (_token == null &&
+        !path.startsWith('/login') &&
+        !path.startsWith('/register') &&
+        !path.startsWith('/admin/login')) {
       throw Exception('No token set. Please log in.');
     }
     final url = '$baseUrl$path';
     final body = json.encode(data);
-    final response = await http.post(Uri.parse(url), headers: headers, body: body);
+    if (kDebugMode) debugPrint('POST $url with body: $body');
+    final response =
+        await http.post(Uri.parse(url), headers: headers, body: body);
     return _handleResponse(response, action: 'POST $path');
+  }
+
+  Future<dynamic> postMultipart(String path, Map<String, String> fields,
+      {File? imageFile, String? imageFieldName}) async {
+    if (_token == null &&
+        !path.startsWith('/login') &&
+        !path.startsWith('/register') &&
+        !path.startsWith('/admin/login')) {
+      throw Exception('No token set. Please log in.');
+    }
+
+    final url = '$baseUrl$path';
+    final request = http.MultipartRequest('POST', Uri.parse(url));
+
+    // Add headers
+    request.headers.addAll({
+      'Accept': 'application/json',
+      if (_token != null) 'Authorization': 'Bearer $_token',
+    });
+
+    // Add fields
+    request.fields.addAll(fields);
+
+    // Add image file if provided
+    if (imageFile != null && imageFieldName != null) {
+      request.files.add(
+          await http.MultipartFile.fromPath(imageFieldName, imageFile.path));
+    }
+
+    // Send the request
+    final streamedResponse = await request.send();
+    final response = await http.Response.fromStream(streamedResponse);
+    return _handleResponse(response, action: 'POST Multipart $path');
   }
 
   Future<dynamic> put(String path, dynamic data) async {
     if (_token == null) throw Exception('No token set. Please log in.');
     final url = '$baseUrl$path';
     final body = json.encode(data);
-    final response = await http.put(Uri.parse(url), headers: headers, body: body);
+    if (kDebugMode) debugPrint('PUT $url with body: $body');
+    final response =
+        await http.put(Uri.parse(url), headers: headers, body: body);
     return _handleResponse(response, action: 'PUT $path');
   }
 
@@ -86,17 +132,27 @@ class ApiService {
   }
 
   // Handle HTTP response
-  Future<dynamic> _handleResponse(http.Response response, {String action = 'API request'}) async {
-    if (kDebugMode) print('Response for $action: ${response.statusCode} - ${response.body}');
+  Future<dynamic> _handleResponse(http.Response response,
+      {String action = 'API request'}) async {
+    if (kDebugMode) {
+      debugPrint('Request: $action');
+      debugPrint('URL: ${response.request?.url}');
+      debugPrint('Headers: ${response.request?.headers}');
+      debugPrint('Status Code: ${response.statusCode}');
+      debugPrint('Response Body: ${response.body}');
+    }
     if (response.statusCode >= 200 && response.statusCode < 300) {
       return response.body.isNotEmpty ? json.decode(response.body) : null;
     }
-    throw Exception('$action failed: ${response.statusCode} - ${response.body}');
+    throw Exception(
+        '$action failed with status ${response.statusCode}: ${response.body}');
   }
 
   // Authentication Methods
-  Future<Map<String, dynamic>> register(String name, String email, String password, String role) async {
-    return await post('/register', {'name': name, 'email': email, 'password': password, 'role': role});
+  Future<Map<String, dynamic>> register(
+      String name, String email, String password, String role) async {
+    return await post('/register',
+        {'name': name, 'email': email, 'password': password, 'role': role});
   }
 
   Future<Map<String, dynamic>> login(String email, String password) async {
@@ -107,8 +163,10 @@ class ApiService {
     return await post('/admin/login', {'email': email, 'password': password});
   }
 
-  Future<Map<String, dynamic>> loginWithGoogle(String email, String accessToken) async {
-    return await post('/google-login', {'email': email, 'google_token': accessToken});
+  Future<Map<String, dynamic>> loginWithGoogle(
+      String email, String accessToken) async {
+    return await post(
+        '/google-login', {'email': email, 'google_token': accessToken});
   }
 
   Future<void> logout({bool isAdmin = false}) async {
@@ -123,27 +181,6 @@ class ApiService {
 
   Future<Map<String, dynamic>> getProfile() async {
     return await get('/profile');
-  }
-
-  Future<Map<String, dynamic>> updateProfile(
-    String name,
-    String email, {
-    String? deliveryLocation,
-    String? role,
-    String? phone,
-    String? vehicle,
-    bool? admin,
-  }) async {
-    final body = {
-      'name': name,
-      'email': email,
-      if (deliveryLocation != null) 'delivery_location': deliveryLocation,
-      if (role != null) 'role': role,
-      if (phone != null) 'phone': phone,
-      if (vehicle != null) 'vehicle': vehicle,
-      if (admin != null) 'admin': admin,
-    };
-    return await put('/profile', body);
   }
 
   Future<Map<String, dynamic>> upgradeRole(String newRole) async {
@@ -174,28 +211,33 @@ class ApiService {
   Future<void> updateMenuPrice(String menuId, double price) async {
     final response = await put('/admin/menu/$menuId/price', {'price': price});
     if (response != null && response['success'] != true) {
-      throw Exception('Failed to update menu price: ${response['message'] ?? 'Unknown error'}');
+      throw Exception(
+          'Failed to update menu price: ${response['message'] ?? 'Unknown error'}');
     }
   }
 
-  Future<void> updateGroceryItemPrice(String groceryId, double price, {int itemIndex = 0}) async {
+  Future<void> updateGroceryItemPrice(String groceryId, double price,
+      {int itemIndex = 0}) async {
     final response = await put('/admin/grocery/$groceryId/price', {
       'price': price,
       'item_index': itemIndex,
     });
     if (response != null && response['success'] != true) {
-      throw Exception('Failed to update grocery price: ${response['message'] ?? 'Unknown error'}');
+      throw Exception(
+          'Failed to update grocery price: ${response['message'] ?? 'Unknown error'}');
     }
   }
 
-  Future<void> sendEmail(String subject, String message, String recipient) async {
+  Future<void> sendEmail(
+      String subject, String message, String recipient) async {
     final response = await post('/admin/send-email', {
       'subject': subject,
       'message': message,
       'recipient': recipient,
     });
     if (response != null && response['success'] != true) {
-      throw Exception('Failed to send email: ${response['message'] ?? 'Unknown error'}');
+      throw Exception(
+          'Failed to send email: ${response['message'] ?? 'Unknown error'}');
     }
   }
 
@@ -206,10 +248,12 @@ class ApiService {
     double north = 14.0,
     double east = 15.0,
   }) async {
-    final query = '[out:json];node["amenity"="restaurant"]($south,$west,$north,$east);out;';
+    final query =
+        '[out:json];node["amenity"="restaurant"]($south,$west,$north,$east);out;';
     final url = '$overpassUrl?data=${Uri.encodeQueryComponent(query)}';
     final response = await http.get(Uri.parse(url));
-    final overpassData = await _handleResponse(response, action: 'Overpass Fetch');
+    final overpassData =
+        await _handleResponse(response, action: 'Overpass Fetch');
     final elements = overpassData['elements'] as List<dynamic>;
     List<Map<String, dynamic>> restaurants = [];
 
@@ -219,13 +263,17 @@ class ApiService {
       final lon = restaurant['lon'].toString();
 
       String? imageUrl;
-      final googleUrl = '$googlePlacesUrl/nearbysearch/json?location=$lat,$lon&radius=500&type=restaurant&keyword=$name&key=$googleApiKey';
+      final googleUrl =
+          '$googlePlacesUrl/nearbysearch/json?location=$lat,$lon&radius=500&type=restaurant&keyword=$name&key=$googleApiKey';
       final googleResponse = await http.get(Uri.parse(googleUrl));
       if (googleResponse.statusCode == 200) {
         final googleData = json.decode(googleResponse.body);
-        if (googleData['results'].isNotEmpty && googleData['results'][0]['photos'] != null) {
-          final photoReference = googleData['results'][0]['photos'][0]['photo_reference'];
-          imageUrl = '$googlePlacesUrl/photo?maxwidth=400&photoreference=$photoReference&key=$googleApiKey';
+        if (googleData['results'].isNotEmpty &&
+            googleData['results'][0]['photos'] != null) {
+          final photoReference =
+              googleData['results'][0]['photos'][0]['photo_reference'];
+          imageUrl =
+              '$googlePlacesUrl/photo?maxwidth=400&photoreference=$photoReference&key=$googleApiKey';
         }
       }
 
@@ -247,46 +295,47 @@ class ApiService {
     final lat = locations.first.latitude;
     final lon = locations.first.longitude;
     const delta = 0.45; // ~50km
-    return {'south': lat - delta, 'west': lon - delta, 'north': lat + delta, 'east': lon + delta};
+    return {
+      'south': lat - delta,
+      'west': lon - delta,
+      'north': lat + delta,
+      'east': lon + delta
+    };
   }
 
   Future<Map<String, dynamic>> addRestaurant(
     String name,
-    String address,
-    String state,
-    String country,
-    String category, {
-    double? latitude,
-    double? longitude,
+    String location,
+    String customerCarePhone, {
     String? image,
     required List<Map<String, dynamic>> menuItems,
   }) async {
-    final body = {
+    final data = {
       'name': name,
-      'address': address,
-      'state': state,
-      'country': country,
-      'category': category,
-      'latitude': latitude,
-      'longitude': longitude,
-      'image': image,
-      'menu_items': menuItems,
+      'location': location,
+      'customer_care_phone': customerCarePhone,
+      if (image != null) 'image': image,
+      'menu_items': menuItems, // Pass as array directly, not json-encoded
     };
-    return await post('/restaurants', body);
+    return await post('/restaurants', data);
   }
 
-  Future<List<dynamic>> getFilteredGroceries(String name, String location) async {
+  Future<List<dynamic>> getFilteredGroceries(
+      String name, String location) async {
     final queryParams = <String, String>{};
     if (name.isNotEmpty) queryParams['name'] = name;
     if (location.isNotEmpty) queryParams['location'] = location;
 
-    final uri = Uri.parse('$baseUrl/grocery/filter').replace(queryParameters: queryParams);
+    final uri = Uri.parse('$baseUrl/grocery/filter')
+        .replace(queryParameters: queryParams);
     final data = await get('/grocery/filter?${uri.query}');
     if (kDebugMode) debugPrint('Raw response from /grocery/filter: $data');
 
     if (data is List) return data;
     if (data is Map) return data['groceries'] ?? data['data'] ?? [];
-    if (kDebugMode) debugPrint('Unexpected response type: ${data.runtimeType}, returning empty list');
+    if (kDebugMode)
+      debugPrint(
+          'Unexpected response type: ${data.runtimeType}, returning empty list');
     return [];
   }
 
@@ -295,18 +344,22 @@ class ApiService {
     return data is List ? data : data['restaurants'] ?? data['data'] ?? [];
   }
 
-  Future<List<dynamic>> getFilteredRestaurants(String name, String location) async {
+  Future<List<dynamic>> getFilteredRestaurants(
+      String name, String location) async {
     final queryParams = <String, String>{};
     if (name.isNotEmpty) queryParams['name'] = name;
     if (location.isNotEmpty) queryParams['location'] = location;
 
-    final uri = Uri.parse('$baseUrl/restaurants/filter').replace(queryParameters: queryParams);
+    final uri = Uri.parse('$baseUrl/restaurants/filter')
+        .replace(queryParameters: queryParams);
     final data = await get('/restaurants/filter?${uri.query}');
     if (kDebugMode) debugPrint('Raw response from /restaurants/filter: $data');
 
     if (data is List) return data;
     if (data is Map) return data['restaurants'] ?? data['data'] ?? [];
-    if (kDebugMode) debugPrint('Unexpected response type: ${data.runtimeType}, returning empty list');
+    if (kDebugMode)
+      debugPrint(
+          'Unexpected response type: ${data.runtimeType}, returning empty list');
     return [];
   }
 
@@ -321,12 +374,50 @@ class ApiService {
     return data is List ? data : data['orders'] ?? [];
   }
 
-  Future<Map<String, dynamic>> placeOrder(Map<String, dynamic> orderData) async {
-    return await post('/orders', orderData);
-  }
+  Future<Map<String, dynamic>> createOrderWithPayment(
+      List<Map<String, dynamic>> items,
+      String paymentMethod,
+      double total) async {
+    if (_token == null) {
+      throw Exception('No token set. Please log in.');
+    }
 
-  Future<void> updateOrderPaymentStatus(String orderId, String status) async {
-    await put('/orders/$orderId/payment-status', {'status': status});
+    // Validate items structure
+    for (var item in items) {
+      if (!item.containsKey('id') ||
+          !item.containsKey('name') ||
+          !item.containsKey('price') ||
+          !item.containsKey('quantity') ||
+          !item.containsKey('restaurant_name')) {
+        throw Exception('Invalid item format: $item');
+      }
+    }
+
+    // Validate payment method
+    if (!['flutterwave', 'paystack'].contains(paymentMethod)) {
+      throw Exception('Invalid payment method: $paymentMethod');
+    }
+
+    final orderData = {
+      'items': items,
+      'total': total,
+      'payment_method': paymentMethod,
+    };
+
+    debugPrint('Sending order payload to /orders: ${jsonEncode(orderData)}');
+    final response = await post('/orders', orderData);
+    debugPrint('Order creation response: $response');
+
+    if (response is! Map<String, dynamic>) {
+      throw Exception('Unexpected response format: $response');
+    }
+
+    if (!response.containsKey('order') ||
+        !response.containsKey('payment_link')) {
+      throw Exception('Missing order or payment_link in response: $response');
+    }
+
+    return response;
   }
 
   Future<void> cancelOrder(String orderId) async {
@@ -356,8 +447,10 @@ class ApiService {
     return await getGroceries();
   }
 
-  Future<Map<String, dynamic>> createGrocery(List<Map<String, dynamic>> items) async {
-    final totalAmount = items.fold(0.0, (sum, item) => sum + (item['quantity'] * item['price']));
+  Future<Map<String, dynamic>> createGrocery(
+      List<Map<String, dynamic>> items) async {
+    final totalAmount = items.fold(
+        0.0, (sum, item) => sum + (item['quantity'] * item['price']));
     final body = {
       'items': items,
       'total_amount': totalAmount,
@@ -366,17 +459,37 @@ class ApiService {
     return await post('/grocery', body);
   }
 
+  Future<Map<String, dynamic>> createGroceryWithPayment(
+      List<Map<String, dynamic>> items,
+      String paymentMethod,
+      double total) async {
+    final groceryData = {
+      'items': items,
+      'total_amount': total,
+      'payment_method': paymentMethod,
+    };
+    return await post('/grocery', groceryData);
+  }
+
   Future<void> deleteGrocery(String groceryId) async {
     await delete('/grocery/$groceryId');
   }
 
-  Future<Map<String, dynamic>> initiateCheckout(String groceryId, {String paymentMethod = 'stripe'}) async {
-    return await post('/grocery/$groceryId/checkout', {'payment_method': paymentMethod});
+  Future<Map<String, dynamic>> initiateCheckout(String groceryId,
+      {String paymentMethod = 'flutterwave'}) async {
+    debugPrint(
+        'WARNING: Initiating grocery checkout for $groceryId - is this intended?');
+    return await post(
+        '/grocery/$groceryId/checkout', {'payment_method': paymentMethod});
   }
 
   Future<List<dynamic>> fetchUserGroceries() async {
     final data = await get('/user/groceries');
     return data is List ? data : data['groceries'] ?? data['data'] ?? [];
+  }
+
+  Future<Map<String, dynamic>> getGroceryTracking(String trackingNumber) async {
+    return await get('/grocery/track/$trackingNumber');
   }
 
   // Dasher Methods
@@ -393,7 +506,8 @@ class ApiService {
     await delete('/restaurants/$restaurantId');
   }
 
-  Future<Map<String, dynamic>> updateRestaurant(String restaurantId, Map<String, dynamic> data) async {
+  Future<Map<String, dynamic>> updateRestaurant(
+      String restaurantId, Map<String, dynamic> data) async {
     return await put('/restaurants/$restaurantId', data);
   }
 
@@ -401,13 +515,30 @@ class ApiService {
     await delete('/restaurants/$restaurantId/menu-items/$menuItemId');
   }
 
-  // Review Methods
+// Review Methods
   Future<List<dynamic>> fetchCustomerReviews() async {
     final data = await get('/customer-reviews');
-    return data is List ? data : data['reviews'] ?? data['data'] ?? [];
+    if (data is! List) {
+      debugPrint('Unexpected response format for customer reviews: $data');
+      throw Exception(
+          'Expected a list of reviews, but got: ${data.runtimeType}');
+    }
+    debugPrint('Fetched ${data.length} customer reviews');
+    return data;
   }
 
-  Future<Map<String, dynamic>> submitCustomerReview(Map<String, dynamic> reviewData) async {
-    return await post('/customer-reviews', reviewData);
+  Future<Map<String, dynamic>> submitCustomerReview(
+      Map<String, dynamic> reviewData) async {
+    if (!reviewData.containsKey('rating') || reviewData['rating'] is! int) {
+      throw Exception('Review data must include a valid rating');
+    }
+    final response = await post('/customer-reviews', reviewData);
+    if (response is! Map<String, dynamic>) {
+      debugPrint('Unexpected response format for submitted review: $response');
+      throw Exception(
+          'Expected a review object, but got: ${response.runtimeType}');
+    }
+    debugPrint('Submitted review: $response');
+    return response;
   }
 }

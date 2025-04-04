@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../auth_provider.dart';
-// For debugPrint
+import 'package:flutter/foundation.dart'; // For debugPrint
 
 class AdminLoginScreen extends StatefulWidget {
   const AdminLoginScreen({super.key});
@@ -12,7 +12,8 @@ class AdminLoginScreen extends StatefulWidget {
   State<AdminLoginScreen> createState() => _AdminLoginScreenState();
 }
 
-class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerProviderStateMixin {
+class _AdminLoginScreenState extends State<AdminLoginScreen>
+    with SingleTickerProviderStateMixin {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _emailFocus = FocusNode();
@@ -60,7 +61,8 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
     try {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       debugPrint('Before adminLogin, isAdmin: ${authProvider.isAdmin}');
-      await authProvider.adminLogin(_emailController.text, _passwordController.text);
+      await authProvider.adminLogin(
+          _emailController.text, _passwordController.text);
       debugPrint('After adminLogin, isAdmin: ${authProvider.isAdmin}');
 
       if (authProvider.isAdmin) {
@@ -120,17 +122,20 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Reset Password', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        title: Text('Reset Password',
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Enter your email to reset your password.', style: GoogleFonts.poppins(fontSize: 14)),
+            Text('Enter your email to reset your password.',
+                style: GoogleFonts.poppins(fontSize: 14)),
             const SizedBox(height: 16),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 prefixIcon: const Icon(Icons.email, color: doorDashRed),
               ),
             ),
@@ -141,7 +146,8 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Reset link sent (coming soon)!', style: GoogleFonts.poppins()),
+                  content: Text('Reset link sent (coming soon)!',
+                      style: GoogleFonts.poppins()),
                   backgroundColor: doorDashRed,
                 ),
               );
@@ -151,7 +157,8 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
           ),
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel', style: GoogleFonts.poppins(color: doorDashGrey)),
+            child:
+                Text('Cancel', style: GoogleFonts.poppins(color: doorDashGrey)),
           ),
         ],
       ),
@@ -163,22 +170,25 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Admin Terms', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: doorDashRed)),
+        title: Text('Admin Terms',
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, color: doorDashRed)),
         content: SingleChildScrollView(
           child: Text(
             'As an admin, you agree to:\n\n'
             '1. **Access**: Use admin tools responsibly.\n'
             '2. **Security**: Protect your credentials.\n'
             '3. **Actions**: Manage users, pricing, and orders per policy.\n'
-            '4. **Support**: Contact support@chiwexpress.com for issues.\n\n'
-            'Full terms at chiwexpress.com/admin-terms.',
+            '4. **Support**: Contact support@canibuyyouameal.com for issues.\n\n'
+            'Full terms at canibuyyouameal.com/admin-terms.',
             style: GoogleFonts.poppins(fontSize: 14, color: doorDashGrey),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Accept', style: GoogleFonts.poppins(color: doorDashRed)),
+            child:
+                Text('Accept', style: GoogleFonts.poppins(color: doorDashRed)),
           ),
         ],
       ),
@@ -187,8 +197,13 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
 
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions for responsive design
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 360 || screenHeight < 600;
+
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: true, // Allow resizing when keyboard appears
       body: Stack(
         children: [
           Container(
@@ -210,211 +225,306 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> with SingleTickerPr
               painter: SubtleTexturePainter(),
             ),
           ),
-          Column(
-            children: [
-              Expanded(
-                child: SafeArea(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Animate(
-                            effects: const [FadeEffect(duration: Duration(milliseconds: 800)), ScaleEffect()],
-                            child: Column(
-                              children: [
-                                Icon(Icons.admin_panel_settings, size: 100, color: Colors.white),
-                                const SizedBox(height: 16),
-                                Text(
-                                  'Admin Portal',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 36,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
-                                    letterSpacing: 1.5,
-                                    shadows: [Shadow(color: Colors.black.withOpacity(0.4), blurRadius: 8)],
-                                  ),
-                                ),
-                                Text(
-                                  'Can I Buy You A Meal Express',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    color: Colors.white.withOpacity(0.9),
-                                    fontStyle: FontStyle.italic,
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                Text(
-                                  'Secure access for administrators only',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    color: Colors.white.withOpacity(0.8),
-                                  ),
-                                ),
-                              ],
+          SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth * 0.06, // 6% of screen width
+                    vertical: screenHeight * 0.02, // 2% of screen height
+                  ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight,
+                    ),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Header Section
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: screenHeight * 0.03,
+                              horizontal: screenWidth * 0.03,
                             ),
-                          ),
-                        ),
-                        const SizedBox(height: 40),
-                        FadeTransition(
-                          opacity: _fadeAnimation,
-                          child: Container(
-                            padding: const EdgeInsets.all(28),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(24),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 8),
-                                ),
-                              ],
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(16),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Admin Login',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.bold,
-                                    color: doorDashRed,
+                            child: Animate(
+                              effects: const [
+                                FadeEffect(
+                                    duration: Duration(milliseconds: 800)),
+                                ScaleEffect(),
+                              ],
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.admin_panel_settings,
+                                    size: isSmallScreen
+                                        ? 80
+                                        : screenWidth *
+                                            0.2, // 20% of screen width
+                                    color: Colors.white,
                                   ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Enter your admin credentials',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    color: doorDashGrey,
-                                  ),
-                                ),
-                                const SizedBox(height: 24),
-                                TextField(
-                                  controller: _emailController,
-                                  focusNode: _emailFocus,
-                                  decoration: InputDecoration(
-                                    labelText: 'Admin Email',
-                                    labelStyle: GoogleFonts.poppins(color: doorDashGrey),
-                                    filled: true,
-                                    fillColor: Colors.grey[100],
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    prefixIcon: const Icon(Icons.email, color: doorDashRed),
-                                  ),
-                                  keyboardType: TextInputType.emailAddress,
-                                  textInputAction: TextInputAction.next,
-                                  onSubmitted: (_) => FocusScope.of(context).requestFocus(_passwordFocus),
-                                ),
-                                const SizedBox(height: 16),
-                                TextField(
-                                  controller: _passwordController,
-                                  focusNode: _passwordFocus,
-                                  decoration: InputDecoration(
-                                    labelText: 'Password',
-                                    labelStyle: GoogleFonts.poppins(color: doorDashGrey),
-                                    filled: true,
-                                    fillColor: Colors.grey[100],
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    prefixIcon: const Icon(Icons.lock, color: doorDashRed),
-                                    suffixIcon: IconButton(
-                                      icon: Icon(
-                                        _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                                        color: doorDashRed,
-                                      ),
-                                      onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
-                                    ),
-                                  ),
-                                  obscureText: _obscurePassword,
-                                  textInputAction: TextInputAction.done,
-                                  onSubmitted: (_) => _login(),
-                                ),
-                                const SizedBox(height: 12),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    TextButton(
-                                      onPressed: _showForgotPasswordDialog,
-                                      child: Text(
-                                        'Forgot Password?',
-                                        style: GoogleFonts.poppins(color: doorDashRed, fontSize: 12),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: Text(
-                                        'Back to User Login',
-                                        style: GoogleFonts.poppins(color: doorDashGrey, fontSize: 12),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                if (_errorMessage != null) ...[
                                   const SizedBox(height: 16),
                                   Text(
-                                    _errorMessage!,
-                                    style: GoogleFonts.poppins(color: Colors.redAccent),
+                                    'Admin Portal',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: isSmallScreen
+                                          ? 28
+                                          : screenWidth *
+                                              0.09, // Responsive font size
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 1.5,
+                                      shadows: [
+                                        Shadow(
+                                          color: Colors.black.withOpacity(0.4),
+                                          blurRadius: 8,
+                                        ),
+                                      ],
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
+                                  ),
+                                  Text(
+                                    'Can I Buy You A Meal Express',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: isSmallScreen
+                                          ? 14
+                                          : screenWidth * 0.045,
+                                      color: Colors.white.withOpacity(0.9),
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    'Secure access for administrators only',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.poppins(
+                                      fontSize: isSmallScreen
+                                          ? 12
+                                          : screenWidth * 0.035,
+                                      color: Colors.white.withOpacity(0.8),
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
                                   ),
                                 ],
-                                const SizedBox(height: 20),
-                                _isLoading
-                                    ? const Center(child: CircularProgressIndicator(color: doorDashRed))
-                                    : ElevatedButton(
-                                        onPressed: _login,
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: doorDashRed,
-                                          minimumSize: const Size(double.infinity, 56),
-                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                          elevation: 4,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: screenHeight * 0.05),
+                          // Login Form Section
+                          FadeTransition(
+                            opacity: _fadeAnimation,
+                            child: Container(
+                              padding: EdgeInsets.all(screenWidth * 0.07),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(24),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.3),
+                                    blurRadius: 20,
+                                    offset: const Offset(0, 8),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Admin Login',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: isSmallScreen
+                                          ? 22
+                                          : screenWidth * 0.065,
+                                      fontWeight: FontWeight.bold,
+                                      color: doorDashRed,
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    'Enter your admin credentials',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: isSmallScreen
+                                          ? 12
+                                          : screenWidth * 0.035,
+                                      color: doorDashGrey,
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.03),
+                                  TextField(
+                                    controller: _emailController,
+                                    focusNode: _emailFocus,
+                                    decoration: InputDecoration(
+                                      labelText: 'Admin Email',
+                                      labelStyle: GoogleFonts.poppins(
+                                          color: doorDashGrey),
+                                      filled: true,
+                                      fillColor: Colors.grey[100],
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      prefixIcon: const Icon(Icons.email,
+                                          color: doorDashRed),
+                                    ),
+                                    keyboardType: TextInputType.emailAddress,
+                                    textInputAction: TextInputAction.next,
+                                    onSubmitted: (_) => FocusScope.of(context)
+                                        .requestFocus(_passwordFocus),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.02),
+                                  TextField(
+                                    controller: _passwordController,
+                                    focusNode: _passwordFocus,
+                                    decoration: InputDecoration(
+                                      labelText: 'Password',
+                                      labelStyle: GoogleFonts.poppins(
+                                          color: doorDashGrey),
+                                      filled: true,
+                                      fillColor: Colors.grey[100],
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      prefixIcon: const Icon(Icons.lock,
+                                          color: doorDashRed),
+                                      suffixIcon: IconButton(
+                                        icon: Icon(
+                                          _obscurePassword
+                                              ? Icons.visibility_off
+                                              : Icons.visibility,
+                                          color: doorDashRed,
                                         ),
+                                        onPressed: () => setState(() =>
+                                            _obscurePassword =
+                                                !_obscurePassword),
+                                      ),
+                                    ),
+                                    obscureText: _obscurePassword,
+                                    textInputAction: TextInputAction.done,
+                                    onSubmitted: (_) => _login(),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.015),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      TextButton(
+                                        onPressed: _showForgotPasswordDialog,
                                         child: Text(
-                                          'Login',
-                                          style: GoogleFonts.poppins(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w600),
+                                          'Forgot Password?',
+                                          style: GoogleFonts.poppins(
+                                            color: doorDashRed,
+                                            fontSize: isSmallScreen
+                                                ? 10
+                                                : screenWidth * 0.03,
+                                          ),
                                         ),
-                                      ).animate().slideY(begin: 0.2, end: 0.0, duration: 400.ms),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: Text(
+                                          'Back to User Login',
+                                          style: GoogleFonts.poppins(
+                                            color: doorDashGrey,
+                                            fontSize: isSmallScreen
+                                                ? 10
+                                                : screenWidth * 0.03,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  if (_errorMessage != null) ...[
+                                    SizedBox(height: screenHeight * 0.02),
+                                    Text(
+                                      _errorMessage!,
+                                      style: GoogleFonts.poppins(
+                                        color: Colors.redAccent,
+                                        fontSize: isSmallScreen
+                                            ? 12
+                                            : screenWidth * 0.035,
+                                      ),
+                                      textScaler: const TextScaler.linear(1.0),
+                                    ),
+                                  ],
+                                  SizedBox(height: screenHeight * 0.025),
+                                  _isLoading
+                                      ? const Center(
+                                          child: CircularProgressIndicator(
+                                              color: doorDashRed))
+                                      : ElevatedButton(
+                                          onPressed: _login,
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: doorDashRed,
+                                            minimumSize: Size(double.infinity,
+                                                screenHeight * 0.07),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(12)),
+                                            elevation: 4,
+                                          ),
+                                          child: Text(
+                                            'Login',
+                                            style: GoogleFonts.poppins(
+                                              fontSize: isSmallScreen
+                                                  ? 16
+                                                  : screenWidth * 0.045,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                            textScaler:
+                                                const TextScaler.linear(1.0),
+                                          ),
+                                        ).animate().slideY(
+                                          begin: 0.2,
+                                          end: 0.0,
+                                          duration: 400.ms),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Spacer(),
+                          // Footer Section
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: screenHeight * 0.02,
+                              horizontal: screenWidth * 0.06,
+                            ),
+                            color: Colors.white.withOpacity(0.9),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: _showAdminTerms,
+                                  child: Text(
+                                    'Admin Terms',
+                                    style: GoogleFonts.poppins(
+                                      color: doorDashRed,
+                                      fontSize: isSmallScreen
+                                          ? 12
+                                          : screenWidth * 0.035,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    textScaler: const TextScaler.linear(1.0),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-                color: Colors.white.withOpacity(0.9),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: _showAdminTerms,
-                      child: Text(
-                        'Admin Terms',
-                        style: GoogleFonts.poppins(
-                          color: doorDashRed,
-                          fontSize: 14,
-                          decoration: TextDecoration.underline,
-                        ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ],
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),

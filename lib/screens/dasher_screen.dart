@@ -44,7 +44,7 @@ class _DasherScreenState extends State<DasherScreen> {
       4: '/restaurant-owner',
       5: '/dashers',
     };
-    if (index != 5 && routes.containsKey(index)) { // 5 is Dasher
+    if (index != 5 && routes.containsKey(index)) {
       Navigator.pushReplacementNamed(context, routes[index]!);
     }
   }
@@ -55,10 +55,13 @@ class _DasherScreenState extends State<DasherScreen> {
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        title: Text('Access Denied', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600, color: textColor)),
+        title: Text('Access Denied',
+            style: GoogleFonts.poppins(
+                fontSize: 20, fontWeight: FontWeight.w600, color: textColor)),
         content: Text(
           'This page is only for Dashers. You’ll be redirected to Home.',
-          style: GoogleFonts.poppins(fontSize: 16, color: const Color(0xFF757575)),
+          style:
+              GoogleFonts.poppins(fontSize: 16, color: const Color(0xFF757575)),
         ),
         actions: [
           TextButton(
@@ -66,7 +69,9 @@ class _DasherScreenState extends State<DasherScreen> {
               Navigator.pop(context);
               Navigator.pushReplacementNamed(context, '/home');
             },
-            child: Text('OK', style: GoogleFonts.poppins(fontSize: 16, color: const Color(0xFFEF2A39))),
+            child: Text('OK',
+                style: GoogleFonts.poppins(
+                    fontSize: 16, color: const Color(0xFFEF2A39))),
           ),
         ],
       ),
@@ -86,17 +91,40 @@ class _DasherScreenState extends State<DasherScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Details saved successfully', style: GoogleFonts.poppins(color: Colors.white)),
-            backgroundColor: const Color(0xFFEF2A39),
+            content: Text('Details saved successfully',
+                style: GoogleFonts.poppins(color: Colors.white)),
+            backgroundColor: Colors.green,
+            duration: const Duration(seconds: 2),
           ),
         );
       }
     } catch (e) {
+      debugPrint('Error saving dasher details: $e');
+      String errorMessage;
+      if (e.toString().contains('401') ||
+          e.toString().contains('unauthorized')) {
+        errorMessage = 'Authentication failed. Please log in again.';
+      } else if (e.toString().contains('network') ||
+          e.toString().contains('timeout')) {
+        errorMessage =
+            'Network error. Please check your connection and try again.';
+      } else {
+        errorMessage = 'Failed to save details. Please try again later.';
+      }
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error saving details: $e', style: GoogleFonts.poppins(color: Colors.white)),
+            content: Text(errorMessage,
+                style: GoogleFonts.poppins(color: Colors.white)),
             backgroundColor: Colors.redAccent,
+            duration: const Duration(seconds: 3),
+            action: SnackBarAction(
+              label: 'Dismiss',
+              textColor: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+            ),
           ),
         );
       }
@@ -114,7 +142,8 @@ class _DasherScreenState extends State<DasherScreen> {
       appBar: AppBar(
         title: Text(
           'Dasher Dashboard',
-          style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+          style: GoogleFonts.poppins(
+              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
         ),
         backgroundColor: const Color(0xFFEF2A39), // DoorDash red
         elevation: 0,
@@ -129,52 +158,66 @@ class _DasherScreenState extends State<DasherScreen> {
               children: [
                 Text(
                   'Welcome, ${auth.name ?? 'Dasher'}!',
-                  style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.w600, color: textColor),
+                  style: GoogleFonts.poppins(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: textColor),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Role: Dasher',
-                  style: GoogleFonts.poppins(fontSize: 16, color: const Color(0xFFEF2A39)),
+                  style: GoogleFonts.poppins(
+                      fontSize: 16, color: const Color(0xFFEF2A39)),
                 ),
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
                     labelText: 'Full Name',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
                   ),
-                  validator: (value) => value!.isEmpty ? 'Enter your name' : null,
+                  validator: (value) =>
+                      value!.isEmpty ? 'Enter your name' : null,
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _phoneController,
                   decoration: InputDecoration(
                     labelText: 'Phone Number',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
                   ),
                   keyboardType: TextInputType.phone,
-                  validator: (value) => value!.isEmpty ? 'Enter your phone number' : null,
+                  validator: (value) =>
+                      value!.isEmpty ? 'Enter your phone number' : null,
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _vehicleController,
                   decoration: InputDecoration(
                     labelText: 'Vehicle Type (e.g., Bike, Car)',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
                   ),
-                  validator: (value) => value!.isEmpty ? 'Enter your vehicle type' : null,
+                  validator: (value) =>
+                      value!.isEmpty ? 'Enter your vehicle type' : null,
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
                   onPressed: _isLoading ? null : _saveDetails,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFEF2A39),
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16, horizontal: 32),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
                   ),
                   child: _isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : Text('Save Details', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white)),
+                      : Text('Save Details',
+                          style: GoogleFonts.poppins(
+                              fontSize: 16, color: Colors.white)),
                 ),
               ],
             ),
@@ -184,11 +227,14 @@ class _DasherScreenState extends State<DasherScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.restaurant), label: 'Restaurants'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Orders'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.restaurant), label: 'Restaurants'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), label: 'Orders'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Owner'),
-          BottomNavigationBarItem(icon: Icon(Icons.directions_bike), label: 'Dasher'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.directions_bike), label: 'Dasher'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: const Color(0xFFEF2A39),

@@ -15,7 +15,8 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen>
+    with SingleTickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
   String _email = '';
   String _password = '';
@@ -55,8 +56,15 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     await authProvider.loadToken();
     if (authProvider.token != null && mounted) {
-      debugPrint('Existing token found: ${authProvider.token}, navigating to home');
-      Navigator.pushReplacementNamed(context, '/home');
+      debugPrint(
+          'Existing token found: ${authProvider.token}, Role: ${authProvider.role}');
+      if (authProvider.role == 'restaurant_owner') {
+        debugPrint('Navigating to /restaurant-owner');
+        Navigator.pushReplacementNamed(context, '/restaurant-owner');
+      } else {
+        debugPrint('Navigating to /home');
+        Navigator.pushReplacementNamed(context, '/home');
+      }
     }
   }
 
@@ -78,60 +86,104 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
         }
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Welcome, $role!', style: GoogleFonts.poppins()), backgroundColor: accentColor),
+            SnackBar(
+              content: Text('Welcome, $role!', style: GoogleFonts.poppins()),
+              backgroundColor: accentColor,
+              duration: const Duration(seconds: 2),
+            ),
           );
           await Future.delayed(const Duration(milliseconds: 500));
-          Navigator.pushReplacementNamed(context, '/home');
+          if (role == 'restaurant_owner') {
+            debugPrint('Navigating to /restaurant-owner for role: $role');
+            Navigator.pushReplacementNamed(context, '/restaurant-owner');
+          } else {
+            debugPrint('Navigating to /home for role: $role');
+            Navigator.pushReplacementNamed(context, '/home');
+          }
         }
       } catch (e) {
         debugPrint('Login error: $e');
+        String errorMessage;
+        if (e.toString().contains('401') || e.toString().contains('invalid')) {
+          errorMessage = 'Invalid email or password. Please try again.';
+        } else if (e.toString().contains('network') ||
+            e.toString().contains('timeout')) {
+          errorMessage =
+              'Network error. Please check your connection and try again.';
+        } else {
+          errorMessage =
+              'An unexpected error occurred. Please try again later.';
+        }
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Login failed: $e', style: GoogleFonts.poppins()), backgroundColor: Colors.red),
+            SnackBar(
+              content: Text(errorMessage, style: GoogleFonts.poppins()),
+              backgroundColor: Colors.red,
+              duration: const Duration(seconds: 3),
+              action: SnackBarAction(
+                label: 'Dismiss',
+                textColor: Colors.white,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                },
+              ),
+            ),
           );
           setState(() => _isLoading = false);
-          _animationController.reverse().then((_) => _animationController.forward());
+          _animationController
+              .reverse()
+              .then((_) => _animationController.forward());
         }
       }
     }
   }
 
-  Future<void> _signInWithGoogle() async {
-    setState(() => _isLoading = true);
-    try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        setState(() => _isLoading = false);
-        return;
-      }
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-      final authProvider = Provider.of<AuthProvider>(context, listen: false);
-      final response = await authProvider.loginWithGoogle(googleUser.email, googleAuth.accessToken!);
-      debugPrint('Google Login Response: $response');
-      final role = response['user']['role'] ?? 'customer';
-      final token = response['token'];
-      if (token != null) {
-        await ApiService().setToken(token);
-        debugPrint('Google Token set in ApiService: $token');
-      } else {
-        debugPrint('No token in Google response');
-      }
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Welcome, $role! (Google)', style: GoogleFonts.poppins()), backgroundColor: accentColor),
-        );
-        await Future.delayed(const Duration(milliseconds: 500));
-        Navigator.pushReplacementNamed(context, '/home');
-      }
-    } catch (e) {
-      debugPrint('Google Sign-In error: $e');
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Google Sign-In failed: $e', style: GoogleFonts.poppins()), backgroundColor: Colors.red),
-        );
-        setState(() => _isLoading = false);
-      }
-    }
+  void _showGoogleComingSoonPopup() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        backgroundColor: Colors.white,
+        contentPadding: const EdgeInsets.all(24),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.network(
+              'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png',
+              height: 60,
+              errorBuilder: (context, error, stackTrace) => const Icon(
+                  Icons.g_mobiledata,
+                  size: 60,
+                  color: Color(0xFFEF2A39)),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Google Sign-In Coming Soon!',
+              style: GoogleFonts.poppins(
+                  fontSize: 20, fontWeight: FontWeight.bold, color: textColor),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 12),
+            Text(
+              'This feature is under development. Please use your email and password to log in for now.',
+              style: GoogleFonts.poppins(
+                  fontSize: 14, color: textColor.withOpacity(0.7)),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('OK',
+                style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: const Color(0xFFEF2A39),
+                    fontWeight: FontWeight.w600)),
+          ),
+        ],
+      ),
+    );
   }
 
   void _showTermsAndConditions() {
@@ -139,24 +191,27 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Terms and Conditions', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Text('Terms and Conditions',
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, color: textColor)),
         content: SingleChildScrollView(
           child: Text(
             'Welcome to Can I Buy You A Meal Express! By signing in, you agree to:\n\n'
             '1. **Usage**: Use the app for food orders, logistics, and groceries.\n'
-            '2. **Privacy**: We protect your data—see our policy at chiwexpress.com/privacy.\n'
+            '2. **Privacy**: We protect your data—see our policy at canibuyyouameal.com/privacy.\n'
             '3. **Roles**: Choose Customer, Merchant, or Dasher roles.\n'
             '4. **Payments**: Secure transactions, no refunds after delivery.\n'
-            '5. **Support**: Contact support@chiwexpress.com.\n\n'
-            'Full terms at chiwexpress.com/terms.',
-            style: GoogleFonts.poppins(fontSize: 14, color: textColor.withOpacity(0.8)),
+            '5. **Support**: Contact support@canibuyyouameal.com.\n\n'
+            'Full terms at canibuyyouameal.com/terms.',
+            style: GoogleFonts.poppins(
+                fontSize: 14, color: textColor.withOpacity(0.8)),
           ),
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('Got it', style: GoogleFonts.poppins(color: primaryColor)),
-          ),
+              onPressed: () => Navigator.pop(context),
+              child: Text('Got it',
+                  style: GoogleFonts.poppins(color: primaryColor))),
         ],
       ),
     );
@@ -167,7 +222,9 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Privacy Policy', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Text('Privacy Policy',
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, color: textColor)),
         content: SingleChildScrollView(
           child: Text(
             'At Can I Buy You A Meal Express, your privacy matters:\n\n'
@@ -175,16 +232,17 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
             '2. **Usage**: Data improves your experience.\n'
             '3. **Security**: Encrypted storage and secure payments.\n'
             '4. **Sharing**: Only with necessary partners.\n'
-            '5. **Rights**: Opt-out or delete data via support@chiwexpress.com.\n\n'
-            'Full policy at chiwexpress.com/privacy.',
-            style: GoogleFonts.poppins(fontSize: 14, color: textColor.withOpacity(0.8)),
+            '5. **Rights**: Opt-out or delete data via support@canibuyyouameal.com.\n\n'
+            'Full policy at canibuyyouameal.com/privacy.',
+            style: GoogleFonts.poppins(
+                fontSize: 14, color: textColor.withOpacity(0.8)),
           ),
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('Understood', style: GoogleFonts.poppins(color: primaryColor)),
-          ),
+              onPressed: () => Navigator.pop(context),
+              child: Text('Understood',
+                  style: GoogleFonts.poppins(color: primaryColor))),
         ],
       ),
     );
@@ -196,17 +254,20 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Reset Password', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        title: Text('Reset Password',
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Enter your email to reset your password.', style: GoogleFonts.poppins(fontSize: 14)),
+            Text('Enter your email to reset your password.',
+                style: GoogleFonts.poppins(fontSize: 14)),
             const SizedBox(height: 16),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 prefixIcon: const Icon(Icons.email),
               ),
             ),
@@ -216,16 +277,20 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
           TextButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Reset link sent (coming soon)!', style: GoogleFonts.poppins()), backgroundColor: accentColor),
+                SnackBar(
+                    content: Text('Reset link sent (coming soon)!',
+                        style: GoogleFonts.poppins()),
+                    backgroundColor: accentColor),
               );
               Navigator.pop(context);
             },
-            child: Text('Send', style: GoogleFonts.poppins(color: primaryColor)),
+            child:
+                Text('Send', style: GoogleFonts.poppins(color: primaryColor)),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('Cancel', style: GoogleFonts.poppins(color: Colors.grey)),
-          ),
+              onPressed: () => Navigator.pop(context),
+              child: Text('Cancel',
+                  style: GoogleFonts.poppins(color: Colors.grey))),
         ],
       ),
     );
@@ -243,10 +308,8 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
         children: [
           Icon(icon, color: Colors.white, size: 20),
           const SizedBox(width: 8),
-          Text(
-            text,
-            style: GoogleFonts.poppins(fontSize: 12, color: Colors.white),
-          ),
+          Text(text,
+              style: GoogleFonts.poppins(fontSize: 12, color: Colors.white)),
         ],
       ),
     );
@@ -258,7 +321,6 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
-          // DoorDash-inspired background
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -267,34 +329,34 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                 colors: [
                   const Color(0xFFEF2A39),
                   const Color(0xFFD81B23).withOpacity(0.9),
-                  Colors.white.withOpacity(0.95),
+                  Colors.white.withOpacity(0.95)
                 ],
                 stops: const [0.0, 0.5, 1.0],
               ),
             ),
           ),
-          Positioned.fill(
-            child: CustomPaint(
-              painter: SubtleTexturePainter(),
-            ),
-          ),
+          Positioned.fill(child: CustomPaint(painter: SubtleTexturePainter())),
           Column(
             children: [
               Expanded(
                 child: SafeArea(
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0, vertical: 20.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 10),
                           decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(16)),
                           child: Animate(
-                            effects: const [FadeEffect(duration: Duration(milliseconds: 800)), ScaleEffect()],
+                            effects: const [
+                              FadeEffect(duration: Duration(milliseconds: 800)),
+                              ScaleEffect()
+                            ],
                             child: Column(
                               children: [
                                 ClipRRect(
@@ -304,14 +366,18 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                     width: double.infinity,
                                     height: 200,
                                     fit: BoxFit.cover,
-                                    errorBuilder: (context, error, stackTrace) => Container(
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Container(
                                       width: double.infinity,
                                       height: 200,
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFFEF2A39).withOpacity(0.8),
-                                        borderRadius: BorderRadius.circular(16),
-                                      ),
-                                      child: const Icon(Icons.fastfood, size: 100, color: Colors.white),
+                                          color: const Color(0xFFEF2A39)
+                                              .withOpacity(0.8),
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                      child: const Icon(Icons.fastfood,
+                                          size: 100, color: Colors.white),
                                     ),
                                   ),
                                 ),
@@ -323,27 +389,30 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                     fontWeight: FontWeight.w800,
                                     color: Colors.white,
                                     letterSpacing: 1.5,
-                                    shadows: [Shadow(color: Colors.black.withOpacity(0.4), blurRadius: 8)],
+                                    shadows: [
+                                      Shadow(
+                                          color: Colors.black.withOpacity(0.4),
+                                          blurRadius: 8)
+                                    ],
                                   ),
                                 ),
                                 Text(
                                   'Fresh Nigerian Flavors',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    color: Colors.white.withOpacity(0.9),
-                                    fontStyle: FontStyle.italic,
-                                  ),
+                                      fontSize: 18,
+                                      color: Colors.white.withOpacity(0.9),
+                                      fontStyle: FontStyle.italic),
                                 ),
                                 const SizedBox(height: 16),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
                                   child: Text(
                                     'Savor the taste of Nigeria with fast, delicious food delivery!',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.poppins(
-                                      fontSize: 14,
-                                      color: Colors.white.withOpacity(0.8),
-                                    ),
+                                        fontSize: 14,
+                                        color: Colors.white.withOpacity(0.8)),
                                   ),
                                 ),
                                 const SizedBox(height: 16),
@@ -352,11 +421,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                   child: ListView(
                                     scrollDirection: Axis.horizontal,
                                     children: [
-                                      _buildBenefitIcon(Icons.local_dining, 'Local Flavors'),
+                                      _buildBenefitIcon(
+                                          Icons.local_dining, 'Local Flavors'),
                                       const SizedBox(width: 16),
-                                      _buildBenefitIcon(Icons.flash_on, 'Fast Delivery'),
+                                      _buildBenefitIcon(
+                                          Icons.flash_on, 'Fast Delivery'),
                                       const SizedBox(width: 16),
-                                      _buildBenefitIcon(Icons.star, 'Top Rated'),
+                                      _buildBenefitIcon(
+                                          Icons.star, 'Top Rated'),
                                     ],
                                   ),
                                 ),
@@ -374,10 +446,9 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                               borderRadius: BorderRadius.circular(24),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 8),
-                                ),
+                                    color: Colors.grey.withOpacity(0.3),
+                                    blurRadius: 20,
+                                    offset: const Offset(0, 8))
                               ],
                             ),
                             child: Form(
@@ -385,145 +456,164 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    'Welcome Back',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold,
-                                      color: textColor,
-                                    ),
-                                  ),
+                                  Text('Welcome Back',
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: textColor)),
                                   const SizedBox(height: 8),
-                                  Text(
-                                    'Sign in to continue',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 14,
-                                      color: textColor.withOpacity(0.7),
-                                    ),
-                                  ),
+                                  Text('Sign in to continue',
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 14,
+                                          color: textColor.withOpacity(0.7))),
                                   const SizedBox(height: 24),
                                   TextFormField(
                                     focusNode: _emailFocus,
                                     decoration: InputDecoration(
                                       labelText: 'Email',
                                       hintText: 'you@example.com',
-                                      labelStyle: GoogleFonts.poppins(color: textColor.withOpacity(0.7)),
+                                      labelStyle: GoogleFonts.poppins(
+                                          color: textColor.withOpacity(0.7)),
                                       filled: true,
                                       fillColor: Colors.grey[100],
                                       border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      prefixIcon: const Icon(Icons.email, color: Color(0xFFEF2A39)),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          borderSide: BorderSide.none),
+                                      prefixIcon: const Icon(Icons.email,
+                                          color: Color(0xFFEF2A39)),
                                     ),
-                                    validator: (value) => value!.isEmpty || !value.contains('@') ? 'Valid email required' : null,
+                                    validator: (value) =>
+                                        value!.isEmpty || !value.contains('@')
+                                            ? 'Valid email required'
+                                            : null,
                                     onSaved: (value) => _email = value!,
                                     textInputAction: TextInputAction.next,
-                                    onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_passwordFocus),
+                                    onFieldSubmitted: (_) =>
+                                        FocusScope.of(context)
+                                            .requestFocus(_passwordFocus),
                                   ),
                                   const SizedBox(height: 16),
                                   TextFormField(
                                     focusNode: _passwordFocus,
                                     decoration: InputDecoration(
                                       labelText: 'Password',
-                                      labelStyle: GoogleFonts.poppins(color: textColor.withOpacity(0.7)),
+                                      labelStyle: GoogleFonts.poppins(
+                                          color: textColor.withOpacity(0.7)),
                                       filled: true,
                                       fillColor: Colors.grey[100],
                                       border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      prefixIcon: const Icon(Icons.lock, color: Color(0xFFEF2A39)),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          borderSide: BorderSide.none),
+                                      prefixIcon: const Icon(Icons.lock,
+                                          color: Color(0xFFEF2A39)),
                                       suffixIcon: IconButton(
                                         icon: Icon(
-                                          _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                                          color: const Color(0xFFEF2A39),
-                                        ),
-                                        onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
+                                            _obscurePassword
+                                                ? Icons.visibility_off
+                                                : Icons.visibility,
+                                            color: const Color(0xFFEF2A39)),
+                                        onPressed: () => setState(() =>
+                                            _obscurePassword =
+                                                !_obscurePassword),
                                       ),
                                     ),
                                     obscureText: _obscurePassword,
-                                    validator: (value) => value!.length < 6 ? 'Password must be 6+ characters' : null,
+                                    validator: (value) => value!.length < 6
+                                        ? 'Password must be 6+ characters'
+                                        : null,
                                     onSaved: (value) => _password = value!,
                                     textInputAction: TextInputAction.done,
                                     onFieldSubmitted: (_) => _submit(),
                                   ),
                                   const SizedBox(height: 12),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       TextButton(
                                         onPressed: _showForgotPasswordDialog,
-                                        child: Text(
-                                          'Forgot Password?',
-                                          style: GoogleFonts.poppins(color: const Color(0xFFEF2A39), fontSize: 12),
-                                        ),
+                                        child: Text('Forgot Password?',
+                                            style: GoogleFonts.poppins(
+                                                color: const Color(0xFFEF2A39),
+                                                fontSize: 12)),
                                       ),
                                       TextButton(
-                                        onPressed: () => Navigator.pushNamed(context, '/signup'),
-                                        child: Text(
-                                          'Sign Up',
-                                          style: GoogleFonts.poppins(color: const Color(0xFFEF2A39), fontSize: 12),
-                                        ),
+                                        onPressed: () => Navigator.pushNamed(
+                                            context, '/signup'),
+                                        child: Text('Sign Up',
+                                            style: GoogleFonts.poppins(
+                                                color: const Color(0xFFEF2A39),
+                                                fontSize: 12)),
                                       ),
                                     ],
                                   ),
                                   const SizedBox(height: 20),
                                   _isLoading
-                                      ? const Center(child: SpinKitThreeBounce(color: Color(0xFFEF2A39), size: 30))
+                                      ? const Center(
+                                          child: SpinKitThreeBounce(
+                                              color: Color(0xFFEF2A39),
+                                              size: 30))
                                       : ElevatedButton(
                                           onPressed: _submit,
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: const Color(0xFFEF2A39),
-                                            minimumSize: const Size(double.infinity, 56),
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                            backgroundColor:
+                                                const Color(0xFFEF2A39),
+                                            minimumSize:
+                                                const Size(double.infinity, 56),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(12)),
                                             elevation: 4,
                                           ),
-                                          child: Text(
-                                            'Sign In',
-                                            style: GoogleFonts.poppins(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w600),
-                                          ),
-                                        ).animate().slideY(begin: 0.2, end: 0.0, duration: 400.ms),
+                                          child: Text('Sign In',
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 18,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w600)),
+                                        ).animate().slideY(
+                                          begin: 0.2,
+                                          end: 0.0,
+                                          duration: 400.ms),
                                   const SizedBox(height: 20),
                                   Center(
-                                    child: Text(
-                                      'or',
-                                      style: GoogleFonts.poppins(color: textColor.withOpacity(0.7)),
-                                    ),
-                                  ),
+                                      child: Text('or',
+                                          style: GoogleFonts.poppins(
+                                              color:
+                                                  textColor.withOpacity(0.7)))),
                                   const SizedBox(height: 20),
-                                  ElevatedButton.icon(
-                                    onPressed: _isLoading ? null : _signInWithGoogle,
-                                    icon: Image.network(
-                                      'https://static-00.iconduck.com/assets.00/google-icon-2048x673-w3o7skkh.png',
-                                      height: 24,
-                                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.g_mobiledata, size: 24, color: Colors.grey),
-                                    ),
-                                    label: Text(
-                                      'Sign in with Google',
-                                      style: GoogleFonts.poppins(fontSize: 16, color: textColor),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white,
-                                      minimumSize: const Size(double.infinity, 56),
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                      elevation: 4,
-                                    ),
-                                  ).animate().slideY(begin: 0.2, end: 0.0, duration: 400.ms),
-                                  const SizedBox(height: 20), // Added space before admin login button
-                                  Center(
-                                    child: TextButton(
-                                      onPressed: () => Navigator.pushNamed(context, '/admin-login'), // Admin login route
-                                      child: Text(
-                                        'Admin Login',
-                                        style: GoogleFonts.poppins(
-                                          color: const Color(0xFFEF2A39),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                  GestureDetector(
+                                    onTap: _showGoogleComingSoonPopup,
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 56,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                            color: const Color(0xFFEF2A39),
+                                            width: 2),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color:
+                                                  Colors.grey.withOpacity(0.2),
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 4))
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Continue with Google',
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 16,
+                                              color: const Color(0xFFEF2A39),
+                                              fontWeight: FontWeight.w600),
                                         ),
                                       ),
                                     ),
-                                  ),
+                                  ).animate().slideY(
+                                      begin: 0.2, end: 0.0, duration: 400.ms),
                                 ],
                               ),
                             ),
@@ -535,34 +625,49 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-                color: Colors.white.withOpacity(0.9),
+                padding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 24.0),
+                color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                       onTap: _showTermsAndConditions,
-                      child: Text(
-                        'Terms',
-                        style: GoogleFonts.poppins(
-                          color: const Color(0xFFEF2A39),
-                          fontSize: 14,
-                          decoration: TextDecoration.underline,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEF2A39).withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                              color: const Color(0xFFEF2A39), width: 1),
                         ),
+                        child: Text('Terms',
+                            style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                color: const Color(0xFFEF2A39),
+                                fontWeight: FontWeight.w600)),
                       ),
-                    ),
-                    const SizedBox(width: 40),
+                    ).animate().fadeIn(duration: 600.ms, delay: 200.ms),
+                    const SizedBox(width: 24),
                     GestureDetector(
                       onTap: _showPrivacyPolicy,
-                      child: Text(
-                        'Privacy',
-                        style: GoogleFonts.poppins(
-                          color: const Color(0xFFEF2A39),
-                          fontSize: 14,
-                          decoration: TextDecoration.underline,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEF2A39).withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                              color: const Color(0xFFEF2A39), width: 1),
                         ),
+                        child: Text('Privacy',
+                            style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                color: const Color(0xFFEF2A39),
+                                fontWeight: FontWeight.w600)),
                       ),
-                    ),
+                    ).animate().fadeIn(duration: 600.ms, delay: 400.ms),
                   ],
                 ),
               ),
@@ -574,7 +679,6 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
   }
 }
 
-// Subtle texture painter inspired by DoorDash's clean design
 class SubtleTexturePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
